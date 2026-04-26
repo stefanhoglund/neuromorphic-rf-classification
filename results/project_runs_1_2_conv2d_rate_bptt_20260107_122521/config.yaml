@@ -1,0 +1,68 @@
+dataset:
+  frames_per_combo: 512
+  mods_to_use:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  name: radioml2018_structured
+  num_workers: 0
+  path: data/GOLD_XYZ_OSC.0001_1024.hdf5
+  shuffle: true
+  snrs_to_use:
+  - -20
+  - -10
+  - 0
+  - 10
+  - 20
+  - 30
+  test_frac: 0.1
+  train_frac: 0.8
+  val_frac: 0.1
+encoding:
+  params:
+    subsample: 4
+  type: rate_code
+experiment:
+  name: project_runs_1_2_conv2d_rate_bptt
+  output_dir: results
+  seed: 42
+hardware:
+  assumed_power_w: 150
+logging:
+  compute_decision_latency: true
+  compute_per_snr: true
+  compute_spike_stats: true
+  decision_threshold: 0.9
+model:
+  params:
+    conv_channels:
+    - 64
+    - 128
+    dropout: 0.0
+    grid_size: 16
+    input_channels: 1
+    kernel_sizes:
+    - 3
+    - 3
+    lif_beta: 0.9
+    pool: true
+  type: conv2d_snn
+training:
+  batch_size: 64
+  device: mps
+  early_stopping_min_delta: 0.005
+  early_stopping_patience: 5
+  epochs: 50
+  grad_clip: 1.0
+  loss: cross_entropy
+  lr: 0.0003
+  lr_scheduler:
+    gamma: 0.5
+    step_size: 5
+    type: step
+  max_time_steps: 256
+  optimizer: adam
+  trainer: bptt

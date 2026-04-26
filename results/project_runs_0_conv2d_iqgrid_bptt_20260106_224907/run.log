@@ -1,0 +1,126 @@
+2026-01-06 22:49:07,829 - rf_experiment - INFO - Starting experiment: project_runs_0_conv2d_iqgrid_bptt
+2026-01-06 22:49:07,829 - rf_experiment - INFO - Run name: project_runs_0_conv2d_iqgrid_bptt_20260106_224907
+2026-01-06 22:49:07,829 - rf_experiment - INFO - Config file: configs/project_runs_0_1_conv2d_iqgrid_bptt.yaml
+2026-01-06 22:49:07,829 - rf_experiment - INFO - Saved resolved config to: results/project_runs_0_conv2d_iqgrid_bptt_20260106_224907/config.yaml
+2026-01-06 22:49:07,829 - rf_experiment - INFO - Run directory: results/project_runs_0_conv2d_iqgrid_bptt_20260106_224907
+2026-01-06 22:49:07,847 - rf_experiment - INFO - Using device: mps
+2026-01-06 22:49:07,847 - rf_experiment - INFO - Using device: mps
+2026-01-06 22:49:07,847 - rf_experiment - INFO - Torch version: 2.9.0
+2026-01-06 22:49:07,847 - rf_experiment - INFO - Dataset config: {'path': 'data/GOLD_XYZ_OSC.0001_1024.hdf5', 'name': 'radioml2018_structured', 'frames_per_combo': 512, 'mods_to_use': [0, 1, 2, 3], 'snrs_to_use': [0, 10, 20, 30], 'train_frac': 0.8, 'val_frac': 0.1, 'test_frac': 0.1, 'shuffle': True, 'num_workers': 0}
+2026-01-06 22:49:07,847 - rf_experiment - INFO - Encoding config: {'type': 'iq_grid', 'params': {'grid_size': 16, 'subsample': 4}}
+2026-01-06 22:49:07,848 - rf_experiment - INFO - Total logical dataset size: 8192 samples
+2026-01-06 22:49:07,848 - rf_experiment - INFO - Num classes (from dataset): 4
+2026-01-06 22:49:07,848 - rf_experiment - INFO - Splits: train=6553, val=819, test=820
+2026-01-06 22:49:07,851 - rf_experiment - INFO - Full dataset labels: {0: 2048, 1: 2048, 2: 2048, 3: 2048}
+2026-01-06 22:49:07,851 - rf_experiment - INFO - Full dataset SNRs: {0: 2048, 10: 2048, 20: 2048, 30: 2048}
+2026-01-06 22:49:07,851 - rf_experiment - INFO - Dataloader: batch_size=64, num_workers=0
+2026-01-06 22:49:07,851 - rf_experiment - INFO - Building model: {'type': 'conv2d_snn', 'params': {'input_channels': 1, 'conv_channels': [64, 128], 'kernel_sizes': [3, 3], 'grid_size': 16, 'lif_beta': 0.9, 'dropout': 0.0, 'pool': True, 'num_classes': 4}}
+2026-01-06 22:49:07,851 - rf_experiment - INFO - Building model with num_classes=4
+2026-01-06 22:49:07,868 - rf_experiment - INFO - Building trainer: {'trainer': 'bptt', 'loss': 'cross_entropy', 'optimizer': 'adam', 'lr': 0.0003, 'lr_scheduler': {'type': 'step', 'step_size': 5, 'gamma': 0.5}, 'batch_size': 64, 'epochs': 20, 'max_time_steps': 256, 'grad_clip': 1.0, 'device': 'mps', 'early_stopping_patience': 5, 'early_stopping_min_delta': 0.005}
+2026-01-06 22:49:08,335 - rf_experiment - INFO - Starting training loop...
+2026-01-06 22:49:08,335 - rf_experiment - INFO - [epoch 1/20] training...
+2026-01-06 22:49:41,627 - rf_experiment - INFO - Epoch 1 [50/103] loss=1.3248[epoch 1] lr=0.000300
+2026-01-06 22:50:14,374 - rf_experiment - INFO - Epoch 1 [100/103] loss=1.1993[epoch 1] lr=0.000300
+2026-01-06 22:50:16,228 - rf_experiment - INFO - [epoch 1] train_loss=2.5714, train_acc=0.3073
+2026-01-06 22:50:18,511 - rf_experiment - INFO - [epoch 1] val_loss=1.5824, val_acc=0.3272
+2026-01-06 22:50:18,511 - rf_experiment - INFO - [epoch 1] new best val_acc=0.3272
+2026-01-06 22:50:18,511 - rf_experiment - INFO - [epoch 2/20] training...
+2026-01-06 22:50:50,799 - rf_experiment - INFO - Epoch 2 [50/103] loss=1.2499[epoch 2] lr=0.000300
+2026-01-06 22:51:23,202 - rf_experiment - INFO - Epoch 2 [100/103] loss=1.6042[epoch 2] lr=0.000300
+2026-01-06 22:51:24,858 - rf_experiment - INFO - [epoch 2] train_loss=1.4603, train_acc=0.4055
+2026-01-06 22:51:27,067 - rf_experiment - INFO - [epoch 2] val_loss=1.2646, val_acc=0.4054
+2026-01-06 22:51:27,067 - rf_experiment - INFO - [epoch 2] new best val_acc=0.4054
+2026-01-06 22:51:27,067 - rf_experiment - INFO - [epoch 3/20] training...
+2026-01-06 22:51:59,678 - rf_experiment - INFO - Epoch 3 [50/103] loss=1.0989[epoch 3] lr=0.000300
+2026-01-06 22:52:32,273 - rf_experiment - INFO - Epoch 3 [100/103] loss=0.9483[epoch 3] lr=0.000300
+2026-01-06 22:52:33,935 - rf_experiment - INFO - [epoch 3] train_loss=1.1468, train_acc=0.4813
+2026-01-06 22:52:36,330 - rf_experiment - INFO - [epoch 3] val_loss=1.0276, val_acc=0.5226
+2026-01-06 22:52:36,330 - rf_experiment - INFO - [epoch 3] new best val_acc=0.5226
+2026-01-06 22:52:36,330 - rf_experiment - INFO - [epoch 4/20] training...
+2026-01-06 22:53:08,599 - rf_experiment - INFO - Epoch 4 [50/103] loss=1.1735[epoch 4] lr=0.000300
+2026-01-06 22:53:41,148 - rf_experiment - INFO - Epoch 4 [100/103] loss=1.0273[epoch 4] lr=0.000300
+2026-01-06 22:53:42,819 - rf_experiment - INFO - [epoch 4] train_loss=1.1118, train_acc=0.5391
+2026-01-06 22:53:45,039 - rf_experiment - INFO - [epoch 4] val_loss=1.1244, val_acc=0.4457
+2026-01-06 22:53:45,039 - rf_experiment - INFO - [epoch 4] no improvement in val_acc (streak=1)
+2026-01-06 22:53:45,039 - rf_experiment - INFO - [epoch 5/20] training...
+2026-01-06 22:54:17,340 - rf_experiment - INFO - Epoch 5 [50/103] loss=0.9577[epoch 5] lr=0.000300
+2026-01-06 22:54:49,776 - rf_experiment - INFO - Epoch 5 [100/103] loss=1.0764[epoch 5] lr=0.000300
+2026-01-06 22:54:51,460 - rf_experiment - INFO - [epoch 5] train_loss=1.0089, train_acc=0.5587
+2026-01-06 22:54:53,786 - rf_experiment - INFO - [epoch 5] val_loss=1.0649, val_acc=0.5385
+2026-01-06 22:54:53,787 - rf_experiment - INFO - [epoch 5] new best val_acc=0.5385
+2026-01-06 22:54:53,787 - rf_experiment - INFO - [epoch 6/20] training...
+2026-01-06 22:55:26,265 - rf_experiment - INFO - Epoch 6 [50/103] loss=0.7987[epoch 6] lr=0.000150
+2026-01-06 22:55:59,015 - rf_experiment - INFO - Epoch 6 [100/103] loss=0.7261[epoch 6] lr=0.000150
+2026-01-06 22:56:00,705 - rf_experiment - INFO - [epoch 6] train_loss=0.8115, train_acc=0.6487
+2026-01-06 22:56:02,990 - rf_experiment - INFO - [epoch 6] val_loss=0.9209, val_acc=0.6056
+2026-01-06 22:56:02,991 - rf_experiment - INFO - [epoch 6] new best val_acc=0.6056
+2026-01-06 22:56:02,991 - rf_experiment - INFO - [epoch 7/20] training...
+2026-01-06 22:56:35,747 - rf_experiment - INFO - Epoch 7 [50/103] loss=0.6817[epoch 7] lr=0.000150
+2026-01-06 22:57:08,578 - rf_experiment - INFO - Epoch 7 [100/103] loss=0.5903[epoch 7] lr=0.000150
+2026-01-06 22:57:10,257 - rf_experiment - INFO - [epoch 7] train_loss=0.7333, train_acc=0.6852
+2026-01-06 22:57:12,579 - rf_experiment - INFO - [epoch 7] val_loss=0.6504, val_acc=0.7021
+2026-01-06 22:57:12,580 - rf_experiment - INFO - [epoch 7] new best val_acc=0.7021
+2026-01-06 22:57:12,580 - rf_experiment - INFO - [epoch 8/20] training...
+2026-01-06 22:57:45,409 - rf_experiment - INFO - Epoch 8 [50/103] loss=0.5641[epoch 8] lr=0.000150
+2026-01-06 22:58:18,189 - rf_experiment - INFO - Epoch 8 [100/103] loss=0.5827[epoch 8] lr=0.000150
+2026-01-06 22:58:19,866 - rf_experiment - INFO - [epoch 8] train_loss=0.6622, train_acc=0.7107
+2026-01-06 22:58:22,110 - rf_experiment - INFO - [epoch 8] val_loss=0.6541, val_acc=0.7289
+2026-01-06 22:58:22,111 - rf_experiment - INFO - [epoch 8] new best val_acc=0.7289
+2026-01-06 22:58:22,111 - rf_experiment - INFO - [epoch 9/20] training...
+2026-01-06 22:58:54,862 - rf_experiment - INFO - Epoch 9 [50/103] loss=0.5817[epoch 9] lr=0.000150
+2026-01-06 22:59:27,416 - rf_experiment - INFO - Epoch 9 [100/103] loss=0.6158[epoch 9] lr=0.000150
+2026-01-06 22:59:29,085 - rf_experiment - INFO - [epoch 9] train_loss=0.6524, train_acc=0.7104
+2026-01-06 22:59:31,523 - rf_experiment - INFO - [epoch 9] val_loss=0.6134, val_acc=0.7509
+2026-01-06 22:59:31,523 - rf_experiment - INFO - [epoch 9] new best val_acc=0.7509
+2026-01-06 22:59:31,523 - rf_experiment - INFO - [epoch 10/20] training...
+2026-01-06 23:00:04,131 - rf_experiment - INFO - Epoch 10 [50/103] loss=0.5632[epoch 10] lr=0.000150
+2026-01-06 23:00:36,763 - rf_experiment - INFO - Epoch 10 [100/103] loss=0.6372[epoch 10] lr=0.000150
+2026-01-06 23:00:38,461 - rf_experiment - INFO - [epoch 10] train_loss=0.6276, train_acc=0.7221
+2026-01-06 23:00:40,869 - rf_experiment - INFO - [epoch 10] val_loss=0.5652, val_acc=0.7619
+2026-01-06 23:00:40,869 - rf_experiment - INFO - [epoch 10] new best val_acc=0.7619
+2026-01-06 23:00:40,869 - rf_experiment - INFO - [epoch 11/20] training...
+2026-01-06 23:01:13,515 - rf_experiment - INFO - Epoch 11 [50/103] loss=0.4570[epoch 11] lr=0.000075
+2026-01-06 23:01:46,198 - rf_experiment - INFO - Epoch 11 [100/103] loss=0.4617[epoch 11] lr=0.000075
+2026-01-06 23:01:47,893 - rf_experiment - INFO - [epoch 11] train_loss=0.5963, train_acc=0.7375
+2026-01-06 23:01:50,353 - rf_experiment - INFO - [epoch 11] val_loss=0.5491, val_acc=0.7668
+2026-01-06 23:01:50,353 - rf_experiment - INFO - [epoch 11] no improvement in val_acc (streak=1)
+2026-01-06 23:01:50,353 - rf_experiment - INFO - [epoch 12/20] training...
+2026-01-06 23:02:23,050 - rf_experiment - INFO - Epoch 12 [50/103] loss=0.5109[epoch 12] lr=0.000075
+2026-01-06 23:02:55,615 - rf_experiment - INFO - Epoch 12 [100/103] loss=0.5484[epoch 12] lr=0.000075
+2026-01-06 23:02:57,313 - rf_experiment - INFO - [epoch 12] train_loss=0.5744, train_acc=0.7448
+2026-01-06 23:02:59,591 - rf_experiment - INFO - [epoch 12] val_loss=0.5789, val_acc=0.7534
+2026-01-06 23:02:59,591 - rf_experiment - INFO - [epoch 12] no improvement in val_acc (streak=2)
+2026-01-06 23:02:59,591 - rf_experiment - INFO - [epoch 13/20] training...
+2026-01-06 23:03:31,925 - rf_experiment - INFO - Epoch 13 [50/103] loss=0.4775[epoch 13] lr=0.000075
+2026-01-06 23:04:04,510 - rf_experiment - INFO - Epoch 13 [100/103] loss=0.5531[epoch 13] lr=0.000075
+2026-01-06 23:04:06,211 - rf_experiment - INFO - [epoch 13] train_loss=0.5557, train_acc=0.7571
+2026-01-06 23:04:08,665 - rf_experiment - INFO - [epoch 13] val_loss=0.6932, val_acc=0.6923
+2026-01-06 23:04:08,665 - rf_experiment - INFO - [epoch 13] no improvement in val_acc (streak=3)
+2026-01-06 23:04:08,665 - rf_experiment - INFO - [epoch 14/20] training...
+2026-01-06 23:04:41,243 - rf_experiment - INFO - Epoch 14 [50/103] loss=0.4775[epoch 14] lr=0.000075
+2026-01-06 23:05:13,973 - rf_experiment - INFO - Epoch 14 [100/103] loss=0.3502[epoch 14] lr=0.000075
+2026-01-06 23:05:15,649 - rf_experiment - INFO - [epoch 14] train_loss=0.5652, train_acc=0.7551
+2026-01-06 23:05:18,131 - rf_experiment - INFO - [epoch 14] val_loss=0.6086, val_acc=0.7289
+2026-01-06 23:05:18,131 - rf_experiment - INFO - [epoch 14] no improvement in val_acc (streak=4)
+2026-01-06 23:05:18,131 - rf_experiment - INFO - [epoch 15/20] training...
+2026-01-06 23:05:50,915 - rf_experiment - INFO - Epoch 15 [50/103] loss=0.4763[epoch 15] lr=0.000075
+2026-01-06 23:06:24,183 - rf_experiment - INFO - Epoch 15 [100/103] loss=0.3912[epoch 15] lr=0.000075
+2026-01-06 23:06:25,891 - rf_experiment - INFO - [epoch 15] train_loss=0.5448, train_acc=0.7613
+2026-01-06 23:06:28,333 - rf_experiment - INFO - [epoch 15] val_loss=0.6368, val_acc=0.7045
+2026-01-06 23:06:28,333 - rf_experiment - INFO - [epoch 15] no improvement in val_acc (streak=5)
+2026-01-06 23:06:28,333 - rf_experiment - INFO - [epoch 15] early stopping triggered (patience=5)
+2026-01-06 23:06:28,340 - rf_experiment - INFO - Saved best model checkpoint to results/project_runs_0_conv2d_iqgrid_bptt_20260106_224907/best_model.pt
+2026-01-06 23:06:28,340 - rf_experiment - INFO - Evaluating on test set with best-val checkpoint...
+2026-01-06 23:06:30,805 - rf_experiment - INFO - Saved predictions to results/project_runs_0_conv2d_iqgrid_bptt_20260106_224907/test_predictions_test_final.npz
+2026-01-06 23:06:33,224 - rf_experiment - INFO - Saved predictions to results/project_runs_0_conv2d_iqgrid_bptt_20260106_224907/test_predictions_test_dropout_30.npz
+2026-01-06 23:06:33,224 - rf_experiment - INFO - Test metrics with 30% time-step dropout: {'loss': 1.2262837944961176, 'acc': 0.5317073170731708, 'latency_ms_per_sample': 2.612490550240093, 'energy_j_per_sample': 0.39187358253601395, 'per_snr_acc': {30: 0.6294416243654822, 0: 0.248868778280543, 10: 0.6476190476190476, 20: 0.6302083333333334}, 'per_snr_loss': {30: 0.7914969072048434, 0: 2.4839719019796513, 10: 0.7491213857107574, 20: 0.746638166596919}}
+2026-01-06 23:06:35,592 - rf_experiment - INFO - Saved predictions to results/project_runs_0_conv2d_iqgrid_bptt_20260106_224907/test_predictions_test_shuffled_time.npz
+2026-01-06 23:06:35,592 - rf_experiment - INFO - Test metrics with shuffled time dimension: {'loss': 0.6090416094151939, 'acc': 0.7353658536585366, 'latency_ms_per_sample': 2.5729570120414036, 'energy_j_per_sample': 0.38594355180621054, 'per_snr_acc': {30: 0.7918781725888325, 0: 0.5610859728506787, 10: 0.7619047619047619, 20: 0.8489583333333334}, 'per_snr_loss': {30: 0.47753284986693467, 0: 1.000868118591438, 10: 0.47362909911011924, 20: 0.4410738616861636}}
+2026-01-06 23:06:35,793 - rf_experiment - INFO - Saved confusion matrix to results/project_runs_0_conv2d_iqgrid_bptt_20260106_224907/confusion_matrix.png
+2026-01-06 23:06:35,793 - rf_experiment - INFO - Saved metrics to results/project_runs_0_conv2d_iqgrid_bptt_20260106_224907/metrics.json
+2026-01-06 23:06:35,793 - rf_experiment - INFO - Finished experiment: project_runs_0_conv2d_iqgrid_bptt
+2026-01-06 23:06:35,793 - rf_experiment - INFO - Best val metrics: {'loss': 0.5652343088599497, 'acc': 0.7619047619047619, 'latency_ms_per_sample': 2.651831807491343, 'energy_j_per_sample': 0.39777477112370146, 'per_snr_acc': {20: 0.8121827411167513, 0: 0.5953488372093023, 10: 0.8190954773869347, 30: 0.8317307692307693}, 'per_snr_loss': {20: 0.42362787791050327, 0: 0.9473942908999878, 10: 0.43398668562955967, 30: 0.4298994376630827}, 'epoch': 10}
+2026-01-06 23:06:35,793 - rf_experiment - INFO - Test metrics: {'loss': 0.560664714254984, 'acc': 0.7585365853658537, 'latency_ms_per_sample': 2.6804473563438145, 'energy_j_per_sample': 0.4020671034515722, 'per_snr_acc': {30: 0.8121827411167513, 0: 0.5701357466063348, 10: 0.8333333333333334, 20: 0.8385416666666666}, 'per_snr_loss': {30: 0.4415145007412417, 0: 0.9370048430988489, 10: 0.42093906817137305, 20: 0.4025595916385403}}
+2026-01-06 23:06:35,794 - rf_experiment - INFO - Finished experiment: project_runs_0_conv2d_iqgrid_bptt
+2026-01-06 23:06:35,794 - rf_experiment - INFO - Best val metrics: {'loss': 0.5652343088599497, 'acc': 0.7619047619047619, 'latency_ms_per_sample': 2.651831807491343, 'energy_j_per_sample': 0.39777477112370146, 'per_snr_acc': {20: 0.8121827411167513, 0: 0.5953488372093023, 10: 0.8190954773869347, 30: 0.8317307692307693}, 'per_snr_loss': {20: 0.42362787791050327, 0: 0.9473942908999878, 10: 0.43398668562955967, 30: 0.4298994376630827}, 'epoch': 10}
+2026-01-06 23:06:35,794 - rf_experiment - INFO - Test metrics: {'loss': 0.560664714254984, 'acc': 0.7585365853658537, 'latency_ms_per_sample': 2.6804473563438145, 'energy_j_per_sample': 0.4020671034515722, 'per_snr_acc': {30: 0.8121827411167513, 0: 0.5701357466063348, 10: 0.8333333333333334, 20: 0.8385416666666666}, 'per_snr_loss': {30: 0.4415145007412417, 0: 0.9370048430988489, 10: 0.42093906817137305, 20: 0.4025595916385403}}

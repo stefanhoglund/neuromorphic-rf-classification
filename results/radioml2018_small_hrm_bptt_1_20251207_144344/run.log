@@ -1,0 +1,176 @@
+2025-12-07 14:43:44,169 - rf_experiment - INFO - Starting experiment: radioml2018_small_hrm_bptt_1
+2025-12-07 14:43:44,169 - rf_experiment - INFO - Run name: radioml2018_small_hrm_bptt_1_20251207_144344
+2025-12-07 14:43:44,169 - rf_experiment - INFO - Config file: configs/radioml2018_small_hrm_bptt_1.yaml
+2025-12-07 14:43:44,169 - rf_experiment - INFO - Saved resolved config to: results/radioml2018_small_hrm_bptt_1_20251207_144344/config.yaml
+2025-12-07 14:43:44,169 - rf_experiment - INFO - Run directory: results/radioml2018_small_hrm_bptt_1_20251207_144344
+2025-12-07 14:43:44,183 - rf_experiment - INFO - Using device: mps
+2025-12-07 14:43:44,183 - rf_experiment - INFO - Using device: mps
+2025-12-07 14:43:44,183 - rf_experiment - INFO - Torch version: 2.9.0
+2025-12-07 14:43:44,184 - rf_experiment - INFO - Dataset config: {'path': 'data/GOLD_XYZ_OSC.0001_1024.hdf5', 'name': 'radioml2018_structured', 'frames_per_combo': 1024, 'mods_to_use': [1, 2, 3, 4, 5, 6], 'snrs_to_use': [30], 'train_frac': 0.8, 'val_frac': 0.1, 'test_frac': 0.1, 'shuffle': True, 'num_workers': 0}
+2025-12-07 14:43:44,184 - rf_experiment - INFO - Encoding config: {'type': 'iq_grid', 'params': {'grid_size': 16, 'subsample': 4}}
+2025-12-07 14:43:44,184 - rf_experiment - INFO - Total logical dataset size: 6144 samples
+2025-12-07 14:43:44,184 - rf_experiment - INFO - Num classes (from dataset): 6
+2025-12-07 14:43:44,184 - rf_experiment - INFO - Splits: train=4915, val=614, test=615
+2025-12-07 14:43:44,184 - rf_experiment - INFO - Dataloader: batch_size=128, num_workers=0
+2025-12-07 14:43:44,184 - rf_experiment - INFO - Building model: {'type': 'hrm_rf', 'params': {'input_channels': 1, 'grid_size': 16, 'low_dim': 256, 'high_dim': 256, 'num_cycles': 8, 'num_classes': 6, 'dropout': 0.1, 'agg': 'mean'}}
+2025-12-07 14:43:44,184 - rf_experiment - INFO - Building model with num_classes=6
+2025-12-07 14:43:44,198 - rf_experiment - INFO - Building trainer: {'trainer': 'bptt', 'loss': 'cross_entropy', 'optimizer': 'adam', 'lr': 0.0003, 'batch_size': 128, 'epochs': 50, 'max_time_steps': 256, 'grad_clip': 2.0, 'device': 'mps', 'lr_scheduler': {'type': 'cosine', 'step_size': 10, 'gamma': 0.1}}
+2025-12-07 14:43:44,674 - rf_experiment - INFO - Starting training loop...
+2025-12-07 14:43:44,674 - rf_experiment - INFO - [epoch 1/50] training...
+2025-12-07 14:44:12,835 - rf_experiment - INFO - [epoch 1] train_loss=1.7372, train_acc=0.2368
+2025-12-07 14:44:13,686 - rf_experiment - INFO - [epoch 1] val_loss=1.3831, val_acc=0.3322
+2025-12-07 14:44:13,686 - rf_experiment - INFO - [epoch 2/50] training...
+2025-12-07 14:44:40,701 - rf_experiment - INFO - [epoch 2] train_loss=1.3155, train_acc=0.3310
+2025-12-07 14:44:41,520 - rf_experiment - INFO - [epoch 2] val_loss=1.2222, val_acc=0.3257
+2025-12-07 14:44:41,520 - rf_experiment - INFO - [epoch 3/50] training...
+2025-12-07 14:45:08,667 - rf_experiment - INFO - [epoch 3] train_loss=1.2849, train_acc=0.3365
+2025-12-07 14:45:09,521 - rf_experiment - INFO - [epoch 3] val_loss=1.1753, val_acc=0.3388
+2025-12-07 14:45:09,521 - rf_experiment - INFO - [epoch 4/50] training...
+2025-12-07 14:45:36,114 - rf_experiment - INFO - [epoch 4] train_loss=1.1567, train_acc=0.4171
+2025-12-07 14:45:36,954 - rf_experiment - INFO - [epoch 4] val_loss=1.0092, val_acc=0.4332
+2025-12-07 14:45:36,954 - rf_experiment - INFO - [epoch 5/50] training...
+2025-12-07 14:46:03,639 - rf_experiment - INFO - [epoch 5] train_loss=0.9171, train_acc=0.4714
+2025-12-07 14:46:04,480 - rf_experiment - INFO - [epoch 5] val_loss=0.8584, val_acc=0.4772
+2025-12-07 14:46:04,480 - rf_experiment - INFO - [epoch 6/50] training...
+2025-12-07 14:46:31,366 - rf_experiment - INFO - [epoch 6] train_loss=0.8634, train_acc=0.4808
+2025-12-07 14:46:32,216 - rf_experiment - INFO - [epoch 6] val_loss=0.8693, val_acc=0.4739
+2025-12-07 14:46:32,216 - rf_experiment - INFO - [epoch 7/50] training...
+2025-12-07 14:46:59,358 - rf_experiment - INFO - [epoch 7] train_loss=0.8598, train_acc=0.4879
+2025-12-07 14:47:00,142 - rf_experiment - INFO - [epoch 7] val_loss=0.8888, val_acc=0.4739
+2025-12-07 14:47:00,142 - rf_experiment - INFO - [epoch 8/50] training...
+2025-12-07 14:47:27,411 - rf_experiment - INFO - [epoch 8] train_loss=0.8243, train_acc=0.5021
+2025-12-07 14:47:28,253 - rf_experiment - INFO - [epoch 8] val_loss=0.8648, val_acc=0.4837
+2025-12-07 14:47:28,253 - rf_experiment - INFO - [epoch 9/50] training...
+2025-12-07 14:47:55,344 - rf_experiment - INFO - [epoch 9] train_loss=0.8181, train_acc=0.4981
+2025-12-07 14:47:56,182 - rf_experiment - INFO - [epoch 9] val_loss=0.8146, val_acc=0.5212
+2025-12-07 14:47:56,182 - rf_experiment - INFO - [epoch 10/50] training...
+2025-12-07 14:48:23,651 - rf_experiment - INFO - [epoch 10] train_loss=0.7973, train_acc=0.5056
+2025-12-07 14:48:24,465 - rf_experiment - INFO - [epoch 10] val_loss=0.8234, val_acc=0.5000
+2025-12-07 14:48:24,465 - rf_experiment - INFO - [epoch 11/50] training...
+2025-12-07 14:48:51,210 - rf_experiment - INFO - [epoch 11] train_loss=0.7970, train_acc=0.5123
+2025-12-07 14:48:52,039 - rf_experiment - INFO - [epoch 11] val_loss=0.8038, val_acc=0.4919
+2025-12-07 14:48:52,039 - rf_experiment - INFO - [epoch 12/50] training...
+2025-12-07 14:49:18,826 - rf_experiment - INFO - [epoch 12] train_loss=0.7950, train_acc=0.5196
+2025-12-07 14:49:19,649 - rf_experiment - INFO - [epoch 12] val_loss=0.8354, val_acc=0.4805
+2025-12-07 14:49:19,649 - rf_experiment - INFO - [epoch 13/50] training...
+2025-12-07 14:49:46,291 - rf_experiment - INFO - [epoch 13] train_loss=0.8095, train_acc=0.5007
+2025-12-07 14:49:47,089 - rf_experiment - INFO - [epoch 13] val_loss=0.8545, val_acc=0.4805
+2025-12-07 14:49:47,089 - rf_experiment - INFO - [epoch 14/50] training...
+2025-12-07 14:50:13,777 - rf_experiment - INFO - [epoch 14] train_loss=0.8055, train_acc=0.5227
+2025-12-07 14:50:14,590 - rf_experiment - INFO - [epoch 14] val_loss=0.8123, val_acc=0.5081
+2025-12-07 14:50:14,590 - rf_experiment - INFO - [epoch 15/50] training...
+2025-12-07 14:50:41,096 - rf_experiment - INFO - [epoch 15] train_loss=0.7884, train_acc=0.5402
+2025-12-07 14:50:41,898 - rf_experiment - INFO - [epoch 15] val_loss=0.8176, val_acc=0.5130
+2025-12-07 14:50:41,898 - rf_experiment - INFO - [epoch 16/50] training...
+2025-12-07 14:51:08,761 - rf_experiment - INFO - [epoch 16] train_loss=0.8242, train_acc=0.5241
+2025-12-07 14:51:09,579 - rf_experiment - INFO - [epoch 16] val_loss=0.7979, val_acc=0.5277
+2025-12-07 14:51:09,579 - rf_experiment - INFO - [epoch 17/50] training...
+2025-12-07 14:51:36,058 - rf_experiment - INFO - [epoch 17] train_loss=0.7817, train_acc=0.5487
+2025-12-07 14:51:36,845 - rf_experiment - INFO - [epoch 17] val_loss=0.8001, val_acc=0.5293
+2025-12-07 14:51:36,845 - rf_experiment - INFO - [epoch 18/50] training...
+2025-12-07 14:52:03,296 - rf_experiment - INFO - [epoch 18] train_loss=0.7581, train_acc=0.5709
+2025-12-07 14:52:04,138 - rf_experiment - INFO - [epoch 18] val_loss=0.7984, val_acc=0.5472
+2025-12-07 14:52:04,138 - rf_experiment - INFO - [epoch 19/50] training...
+2025-12-07 14:52:30,730 - rf_experiment - INFO - [epoch 19] train_loss=0.7533, train_acc=0.5896
+2025-12-07 14:52:31,533 - rf_experiment - INFO - [epoch 19] val_loss=0.8322, val_acc=0.5505
+2025-12-07 14:52:31,533 - rf_experiment - INFO - [epoch 20/50] training...
+2025-12-07 14:52:57,968 - rf_experiment - INFO - [epoch 20] train_loss=0.7301, train_acc=0.6055
+2025-12-07 14:52:58,857 - rf_experiment - INFO - [epoch 20] val_loss=0.8582, val_acc=0.5440
+2025-12-07 14:52:58,858 - rf_experiment - INFO - [epoch 21/50] training...
+2025-12-07 14:53:25,811 - rf_experiment - INFO - [epoch 21] train_loss=0.7457, train_acc=0.5915
+2025-12-07 14:53:26,703 - rf_experiment - INFO - [epoch 21] val_loss=0.7915, val_acc=0.5717
+2025-12-07 14:53:26,704 - rf_experiment - INFO - [epoch 22/50] training...
+2025-12-07 14:53:53,976 - rf_experiment - INFO - [epoch 22] train_loss=0.7150, train_acc=0.6295
+2025-12-07 14:53:54,801 - rf_experiment - INFO - [epoch 22] val_loss=0.8596, val_acc=0.5700
+2025-12-07 14:53:54,802 - rf_experiment - INFO - [epoch 23/50] training...
+2025-12-07 14:54:21,607 - rf_experiment - INFO - [epoch 23] train_loss=0.7069, train_acc=0.6366
+2025-12-07 14:54:22,404 - rf_experiment - INFO - [epoch 23] val_loss=0.7612, val_acc=0.6107
+2025-12-07 14:54:22,404 - rf_experiment - INFO - [epoch 24/50] training...
+2025-12-07 14:54:49,182 - rf_experiment - INFO - [epoch 24] train_loss=0.6857, train_acc=0.6409
+2025-12-07 14:54:50,007 - rf_experiment - INFO - [epoch 24] val_loss=0.7689, val_acc=0.5945
+2025-12-07 14:54:50,007 - rf_experiment - INFO - [epoch 25/50] training...
+2025-12-07 14:55:17,344 - rf_experiment - INFO - [epoch 25] train_loss=0.6786, train_acc=0.6511
+2025-12-07 14:55:18,172 - rf_experiment - INFO - [epoch 25] val_loss=0.8114, val_acc=0.5733
+2025-12-07 14:55:18,172 - rf_experiment - INFO - [epoch 26/50] training...
+2025-12-07 14:55:44,726 - rf_experiment - INFO - [epoch 26] train_loss=0.6711, train_acc=0.6543
+2025-12-07 14:55:45,540 - rf_experiment - INFO - [epoch 26] val_loss=0.7653, val_acc=0.6059
+2025-12-07 14:55:45,540 - rf_experiment - INFO - [epoch 27/50] training...
+2025-12-07 14:56:12,386 - rf_experiment - INFO - [epoch 27] train_loss=0.6741, train_acc=0.6519
+2025-12-07 14:56:13,213 - rf_experiment - INFO - [epoch 27] val_loss=0.7568, val_acc=0.6156
+2025-12-07 14:56:13,213 - rf_experiment - INFO - [epoch 28/50] training...
+2025-12-07 14:56:39,762 - rf_experiment - INFO - [epoch 28] train_loss=0.6620, train_acc=0.6572
+2025-12-07 14:56:40,587 - rf_experiment - INFO - [epoch 28] val_loss=0.7414, val_acc=0.6205
+2025-12-07 14:56:40,587 - rf_experiment - INFO - [epoch 29/50] training...
+2025-12-07 14:57:07,367 - rf_experiment - INFO - [epoch 29] train_loss=0.6633, train_acc=0.6647
+2025-12-07 14:57:08,205 - rf_experiment - INFO - [epoch 29] val_loss=0.7481, val_acc=0.6173
+2025-12-07 14:57:08,206 - rf_experiment - INFO - [epoch 30/50] training...
+2025-12-07 14:57:35,226 - rf_experiment - INFO - [epoch 30] train_loss=0.6594, train_acc=0.6657
+2025-12-07 14:57:36,030 - rf_experiment - INFO - [epoch 30] val_loss=0.7542, val_acc=0.6026
+2025-12-07 14:57:36,030 - rf_experiment - INFO - [epoch 31/50] training...
+2025-12-07 14:58:02,715 - rf_experiment - INFO - [epoch 31] train_loss=0.6642, train_acc=0.6600
+2025-12-07 14:58:03,593 - rf_experiment - INFO - [epoch 31] val_loss=0.7919, val_acc=0.5798
+2025-12-07 14:58:03,593 - rf_experiment - INFO - [epoch 32/50] training...
+2025-12-07 14:58:30,631 - rf_experiment - INFO - [epoch 32] train_loss=0.6554, train_acc=0.6598
+2025-12-07 14:58:31,497 - rf_experiment - INFO - [epoch 32] val_loss=0.7392, val_acc=0.6254
+2025-12-07 14:58:31,497 - rf_experiment - INFO - [epoch 33/50] training...
+2025-12-07 14:58:58,507 - rf_experiment - INFO - [epoch 33] train_loss=0.6517, train_acc=0.6686
+2025-12-07 14:58:59,323 - rf_experiment - INFO - [epoch 33] val_loss=0.7413, val_acc=0.6091
+2025-12-07 14:58:59,324 - rf_experiment - INFO - [epoch 34/50] training...
+2025-12-07 14:59:26,673 - rf_experiment - INFO - [epoch 34] train_loss=0.6481, train_acc=0.6688
+2025-12-07 14:59:27,485 - rf_experiment - INFO - [epoch 34] val_loss=0.7617, val_acc=0.6156
+2025-12-07 14:59:27,486 - rf_experiment - INFO - [epoch 35/50] training...
+2025-12-07 14:59:54,667 - rf_experiment - INFO - [epoch 35] train_loss=0.6464, train_acc=0.6641
+2025-12-07 14:59:55,514 - rf_experiment - INFO - [epoch 35] val_loss=0.7593, val_acc=0.6091
+2025-12-07 14:59:55,514 - rf_experiment - INFO - [epoch 36/50] training...
+2025-12-07 15:00:23,159 - rf_experiment - INFO - [epoch 36] train_loss=0.6447, train_acc=0.6773
+2025-12-07 15:00:23,973 - rf_experiment - INFO - [epoch 36] val_loss=0.7757, val_acc=0.6059
+2025-12-07 15:00:23,973 - rf_experiment - INFO - [epoch 37/50] training...
+2025-12-07 15:00:51,266 - rf_experiment - INFO - [epoch 37] train_loss=0.6435, train_acc=0.6726
+2025-12-07 15:00:52,085 - rf_experiment - INFO - [epoch 37] val_loss=0.7502, val_acc=0.6075
+2025-12-07 15:00:52,085 - rf_experiment - INFO - [epoch 38/50] training...
+2025-12-07 15:01:19,282 - rf_experiment - INFO - [epoch 38] train_loss=0.6350, train_acc=0.6757
+2025-12-07 15:01:20,165 - rf_experiment - INFO - [epoch 38] val_loss=0.7600, val_acc=0.6091
+2025-12-07 15:01:20,165 - rf_experiment - INFO - [epoch 39/50] training...
+2025-12-07 15:01:47,402 - rf_experiment - INFO - [epoch 39] train_loss=0.6337, train_acc=0.6720
+2025-12-07 15:01:48,188 - rf_experiment - INFO - [epoch 39] val_loss=0.7471, val_acc=0.6189
+2025-12-07 15:01:48,188 - rf_experiment - INFO - [epoch 40/50] training...
+2025-12-07 15:02:15,515 - rf_experiment - INFO - [epoch 40] train_loss=0.6321, train_acc=0.6812
+2025-12-07 15:02:16,385 - rf_experiment - INFO - [epoch 40] val_loss=0.7422, val_acc=0.6238
+2025-12-07 15:02:16,385 - rf_experiment - INFO - [epoch 41/50] training...
+2025-12-07 15:02:43,605 - rf_experiment - INFO - [epoch 41] train_loss=0.6322, train_acc=0.6830
+2025-12-07 15:02:44,442 - rf_experiment - INFO - [epoch 41] val_loss=0.7535, val_acc=0.6189
+2025-12-07 15:02:44,442 - rf_experiment - INFO - [epoch 42/50] training...
+2025-12-07 15:03:11,550 - rf_experiment - INFO - [epoch 42] train_loss=0.6308, train_acc=0.6800
+2025-12-07 15:03:12,382 - rf_experiment - INFO - [epoch 42] val_loss=0.7562, val_acc=0.6140
+2025-12-07 15:03:12,382 - rf_experiment - INFO - [epoch 43/50] training...
+2025-12-07 15:03:39,795 - rf_experiment - INFO - [epoch 43] train_loss=0.6278, train_acc=0.6891
+2025-12-07 15:03:40,623 - rf_experiment - INFO - [epoch 43] val_loss=0.7458, val_acc=0.6254
+2025-12-07 15:03:40,623 - rf_experiment - INFO - [epoch 44/50] training...
+2025-12-07 15:04:08,086 - rf_experiment - INFO - [epoch 44] train_loss=0.6270, train_acc=0.6828
+2025-12-07 15:04:08,976 - rf_experiment - INFO - [epoch 44] val_loss=0.7536, val_acc=0.6287
+2025-12-07 15:04:08,976 - rf_experiment - INFO - [epoch 45/50] training...
+2025-12-07 15:04:36,041 - rf_experiment - INFO - [epoch 45] train_loss=0.6271, train_acc=0.6877
+2025-12-07 15:04:36,851 - rf_experiment - INFO - [epoch 45] val_loss=0.7501, val_acc=0.6221
+2025-12-07 15:04:36,851 - rf_experiment - INFO - [epoch 46/50] training...
+2025-12-07 15:05:04,320 - rf_experiment - INFO - [epoch 46] train_loss=0.6252, train_acc=0.6881
+2025-12-07 15:05:05,201 - rf_experiment - INFO - [epoch 46] val_loss=0.7467, val_acc=0.6336
+2025-12-07 15:05:05,201 - rf_experiment - INFO - [epoch 47/50] training...
+2025-12-07 15:05:32,691 - rf_experiment - INFO - [epoch 47] train_loss=0.6250, train_acc=0.6926
+2025-12-07 15:05:33,487 - rf_experiment - INFO - [epoch 47] val_loss=0.7506, val_acc=0.6303
+2025-12-07 15:05:33,487 - rf_experiment - INFO - [epoch 48/50] training...
+2025-12-07 15:06:00,755 - rf_experiment - INFO - [epoch 48] train_loss=0.6245, train_acc=0.6834
+2025-12-07 15:06:01,567 - rf_experiment - INFO - [epoch 48] val_loss=0.7481, val_acc=0.6287
+2025-12-07 15:06:01,568 - rf_experiment - INFO - [epoch 49/50] training...
+2025-12-07 15:06:29,001 - rf_experiment - INFO - [epoch 49] train_loss=0.6237, train_acc=0.6897
+2025-12-07 15:06:29,843 - rf_experiment - INFO - [epoch 49] val_loss=0.7480, val_acc=0.6287
+2025-12-07 15:06:29,843 - rf_experiment - INFO - [epoch 50/50] training...
+2025-12-07 15:06:57,447 - rf_experiment - INFO - [epoch 50] train_loss=0.6232, train_acc=0.6889
+2025-12-07 15:06:58,279 - rf_experiment - INFO - [epoch 50] val_loss=0.7481, val_acc=0.6287
+2025-12-07 15:06:58,279 - rf_experiment - INFO - Evaluating on test set...
+2025-12-07 15:06:59,134 - rf_experiment - INFO - Saved metrics to results/radioml2018_small_hrm_bptt_1_20251207_144344/metrics.json
+2025-12-07 15:06:59,135 - rf_experiment - INFO - Finished experiment: radioml2018_small_hrm_bptt_1
+2025-12-07 15:06:59,135 - rf_experiment - INFO - Best val metrics: {'loss': 0.7466509678076455, 'acc': 0.6335504885993485, 'per_snr_acc': {30: 0.6335504885993485}}
+2025-12-07 15:06:59,135 - rf_experiment - INFO - Test metrics: {'loss': 0.6528344951024869, 'acc': 0.6861788617886179, 'per_snr_acc': {30: 0.6861788617886179}}
+2025-12-07 15:06:59,135 - rf_experiment - INFO - Finished experiment: radioml2018_small_hrm_bptt_1
+2025-12-07 15:06:59,135 - rf_experiment - INFO - Best val metrics: {'loss': 0.7466509678076455, 'acc': 0.6335504885993485, 'per_snr_acc': {30: 0.6335504885993485}}
+2025-12-07 15:06:59,135 - rf_experiment - INFO - Test metrics: {'loss': 0.6528344951024869, 'acc': 0.6861788617886179, 'per_snr_acc': {30: 0.6861788617886179}}

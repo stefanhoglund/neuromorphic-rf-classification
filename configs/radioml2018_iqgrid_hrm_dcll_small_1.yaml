@@ -1,0 +1,52 @@
+experiment:
+  name: radioml2018_iqgrid_hrm_dcll_small_1
+  seed: 42
+  output_dir: results
+
+dataset:
+  path: data/GOLD_XYZ_OSC.0001_1024.hdf5
+  name: radioml2018_structured
+  frames_per_combo: 1024     
+  mods_to_use: [3,4]         
+  snrs_to_use: [0, 10]   
+  train_frac: 0.8
+  val_frac: 0.1
+  test_frac: 0.1
+  shuffle: true
+  num_workers: 0
+
+encoding:
+  type: iq_grid
+  params:
+    grid_size: 16
+    subsample: 4      
+
+model:
+  type: hrm_rf
+  params:
+    input_channels: 1
+    grid_size: 16     
+    low_dim: 128
+    high_dim: 128
+    num_cycles: 4
+    # num_classes: 2  
+    dropout: 0.1
+    agg: mean
+
+
+training:
+  trainer: bptt
+  loss: cross_entropy
+  optimizer: adam
+  lr: 0.001
+  batch_size: 16
+  epochs: 10
+  max_time_steps: 256
+  grad_clip: 1.0
+  device: cpu
+
+logging:
+  compute_per_snr: true
+  compute_spike_stats: true
+  compute_decision_latency: true
+  decision_threshold: 0.9

@@ -1,0 +1,35 @@
+2025-12-02 11:37:19,154 - rf_experiment - INFO - Starting experiment: radioml2018_iqgrid_conv2d_dcll
+2025-12-02 11:37:19,154 - rf_experiment - INFO - Run name: radioml2018_iqgrid_conv2d_dcll_20251202_113719
+2025-12-02 11:37:19,154 - rf_experiment - INFO - Config file: configs/radioml2018_iqgrid_conv2d_dcll.yaml
+2025-12-02 11:37:19,154 - rf_experiment - INFO - Saved resolved config to: results/radioml2018_iqgrid_conv2d_dcll_20251202_113719/config.yaml
+2025-12-02 11:37:19,154 - rf_experiment - INFO - Run directory: results/radioml2018_iqgrid_conv2d_dcll_20251202_113719
+2025-12-02 11:37:19,154 - rf_experiment - INFO - Using device: cpu
+2025-12-02 11:37:19,154 - rf_experiment - INFO - Torch version: 2.9.0
+2025-12-02 11:37:19,154 - rf_experiment - INFO - Dataset config: {'path': 'data/GOLD_XYZ_OSC.0001_1024.hdf5', 'name': 'radioml2018_structured', 'frames_per_combo': 256, 'mods_to_use': None, 'snrs_to_use': [-4, 0, 4, 8, 12], 'snr_min': 0, 'snr_max': 30, 'train_frac': 0.7, 'val_frac': 0.15, 'test_frac': 0.15, 'shuffle': True, 'num_workers': 0}
+2025-12-02 11:37:19,154 - rf_experiment - INFO - Encoding config: {'type': 'iq_grid', 'params': {'grid_size': 16, 'subsample': 4}}
+2025-12-02 11:37:19,155 - rf_experiment - INFO - Total logical dataset size: 30720 samples
+2025-12-02 11:37:19,155 - rf_experiment - INFO - Splits: train=21504, val=4608, test=4608
+2025-12-02 11:37:19,156 - rf_experiment - INFO - Dataloader: batch_size=64, num_workers=0
+2025-12-02 11:37:19,156 - rf_experiment - INFO - Building model: {'type': 'conv2d_snn', 'params': {'input_channels': 1, 'conv_channels': [32, 64], 'kernel_sizes': [3, 3], 'grid_size': 16, 'lif_beta': 0.9, 'num_classes': 24, 'dropout': 0.1, 'pool': True}}
+2025-12-02 11:37:19,157 - rf_experiment - INFO - Building trainer: {'trainer': 'dcll', 'loss': 'cross_entropy', 'optimizer': 'adam', 'lr': 0.001, 'batch_size': 64, 'epochs': 5, 'max_time_steps': 256, 'grad_clip': 1.0, 'device': 'cpu'}
+2025-12-02 11:37:19,618 - rf_experiment - INFO - Starting training loop...
+2025-12-02 11:37:19,618 - rf_experiment - INFO - [epoch 1/5] training...
+2025-12-02 12:02:33,724 - rf_experiment - INFO - [epoch 1] train_loss=4.7815, train_acc=0.0928
+2025-12-02 12:05:18,976 - rf_experiment - INFO - [epoch 1] val_loss=2.7526, val_acc=0.1636
+2025-12-02 12:05:18,976 - rf_experiment - INFO - [epoch 2/5] training...
+2025-12-02 12:28:59,350 - rf_experiment - INFO - [epoch 2] train_loss=2.7059, train_acc=0.1795
+2025-12-02 12:31:50,196 - rf_experiment - INFO - [epoch 2] val_loss=2.5511, val_acc=0.1810
+2025-12-02 12:31:50,197 - rf_experiment - INFO - [epoch 3/5] training...
+2025-12-02 12:55:45,201 - rf_experiment - INFO - [epoch 3] train_loss=2.5404, train_acc=0.2067
+2025-12-02 12:58:04,281 - rf_experiment - INFO - [epoch 3] val_loss=2.5565, val_acc=0.2127
+2025-12-02 12:58:04,282 - rf_experiment - INFO - [epoch 4/5] training...
+2025-12-02 13:21:05,429 - rf_experiment - INFO - [epoch 4] train_loss=2.4497, train_acc=0.2304
+2025-12-02 13:24:19,724 - rf_experiment - INFO - [epoch 4] val_loss=2.3482, val_acc=0.2517
+2025-12-02 13:24:19,724 - rf_experiment - INFO - [epoch 5/5] training...
+2025-12-02 13:48:12,263 - rf_experiment - INFO - [epoch 5] train_loss=2.3796, train_acc=0.2461
+2025-12-02 13:51:40,448 - rf_experiment - INFO - [epoch 5] val_loss=2.3229, val_acc=0.2559
+2025-12-02 13:51:40,448 - rf_experiment - INFO - Evaluating on test set...
+2025-12-02 13:54:19,448 - rf_experiment - INFO - Saved metrics to results/radioml2018_iqgrid_conv2d_dcll_20251202_113719/metrics.json
+2025-12-02 13:54:19,450 - rf_experiment - INFO - Finished experiment: radioml2018_iqgrid_conv2d_dcll
+2025-12-02 13:54:19,450 - rf_experiment - INFO - Best val metrics: {'loss': 2.3229094015227423, 'acc': 0.255859375, 'per_snr_acc': {0: 0.18555555555555556, 8: 0.3505933117583603, -4: 0.05235042735042735, 12: 0.35607675906183367, 4: 0.33517089305402425}}
+2025-12-02 13:54:19,450 - rf_experiment - INFO - Test metrics: {'loss': 2.3822747700744205, 'acc': 0.24522569444444445, 'per_snr_acc': {8: 0.3590859630032644, 4: 0.3023758099352052, 12: 0.3577430972388956, -4: 0.05408163265306123, 0: 0.17789473684210527}}

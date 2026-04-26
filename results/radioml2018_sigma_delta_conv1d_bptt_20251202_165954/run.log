@@ -1,0 +1,10 @@
+2025-12-02 16:59:54,476 - rf_experiment - INFO - Starting experiment: radioml2018_sigma_delta_conv1d_bptt
+2025-12-02 16:59:54,476 - rf_experiment - INFO - Run name: radioml2018_sigma_delta_conv1d_bptt_20251202_165954
+2025-12-02 16:59:54,476 - rf_experiment - INFO - Config file: configs/radioml2018_sigma_delta_conv1d_bptt.yaml
+2025-12-02 16:59:54,477 - rf_experiment - INFO - Saved resolved config to: results/radioml2018_sigma_delta_conv1d_bptt_20251202_165954/config.yaml
+2025-12-02 16:59:54,477 - rf_experiment - INFO - Run directory: results/radioml2018_sigma_delta_conv1d_bptt_20251202_165954
+2025-12-02 16:59:54,477 - rf_experiment - INFO - device='cuda' requested but CUDA not available, falling back to CPU
+2025-12-02 16:59:54,477 - rf_experiment - INFO - Using device: cpu
+2025-12-02 16:59:54,477 - rf_experiment - INFO - Torch version: 2.9.0
+2025-12-02 16:59:54,477 - rf_experiment - INFO - Dataset config: {'name': 'radioml2018_hdf5', 'path': 'data/GOLD_XYZ_OSC.0001_1024.hdf5', 'snr_min': -4, 'snr_max': 20, 'train_frac': 0.7, 'val_frac': 0.15, 'test_frac': 0.15, 'shuffle': True, 'limit_samples': None}
+2025-12-02 16:59:54,477 - rf_experiment - INFO - Encoding config: {'type': 'sigma_delta', 'params': {'step': 0.1, 'threshold': 0.0, 'edge_only': True, 'subsample': 1}}

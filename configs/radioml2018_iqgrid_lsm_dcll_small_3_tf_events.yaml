@@ -1,0 +1,50 @@
+experiment:
+  name: radioml2018_iqgrid_conv2d_dcll_small
+  seed: 42
+  output_dir: results
+
+dataset:
+  path: data/GOLD_XYZ_OSC.0001_1024.hdf5
+  name: radioml2018_structured
+  frames_per_combo: 512
+  mods_to_use: null 
+  snrs_to_use: null # [-4, 0, 4, 8, 12]  
+  train_frac: 0.8
+  val_frac: 0.1
+  test_frac: 0.1
+  shuffle: true
+  num_workers: 0
+
+encoding:
+  type: tf_events
+  params:
+    grid_size: 64
+    subsample: 1      
+
+model:
+  type: lsm
+  params:
+    reservoir_size: 512
+    leak: 0.9
+    spectral_radius: 0.9
+    input_scaling: 1.0
+    sparsity: 0.1
+    train_reservoir: false
+    readout_agg: mean 
+
+training:
+  trainer: dcll
+  loss: cross_entropy
+  optimizer: adam
+  lr: 0.001
+  batch_size: 16
+  epochs: 3
+  max_time_steps: 256
+  grad_clip: 1.0
+  device: cpu
+
+logging:
+  compute_per_snr: true
+  compute_spike_stats: true
+  compute_decision_latency: true
+  decision_threshold: 0.9

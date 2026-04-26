@@ -1,0 +1,29 @@
+2026-01-05 11:06:37,194 - rf_experiment - INFO - Starting experiment: project_runs_1_conv2d_.iqgrid_bptt
+2026-01-05 11:06:37,194 - rf_experiment - INFO - Run name: project_runs_1_conv2d_.iqgrid_bptt_20260105_110637
+2026-01-05 11:06:37,195 - rf_experiment - INFO - Config file: configs/project_runs_1_conv2d_.iqgrid_bptt.yaml
+2026-01-05 11:06:37,195 - rf_experiment - INFO - Saved resolved config to: results/project_runs_1_conv2d_.iqgrid_bptt_20260105_110637/config.yaml
+2026-01-05 11:06:37,195 - rf_experiment - INFO - Run directory: results/project_runs_1_conv2d_.iqgrid_bptt_20260105_110637
+2026-01-05 11:06:37,204 - rf_experiment - INFO - Using device: mps
+2026-01-05 11:06:37,204 - rf_experiment - INFO - Using device: mps
+2026-01-05 11:06:37,204 - rf_experiment - INFO - Torch version: 2.9.0
+2026-01-05 11:06:37,204 - rf_experiment - INFO - Dataset config: {'path': 'data/GOLD_XYZ_OSC.0001_1024.hdf5', 'name': 'radioml2018_structured', 'frames_per_combo': 512, 'mods_to_use': [1, 2], 'snrs_to_use': [0, 10, 20, 30], 'train_frac': 0.8, 'val_frac': 0.1, 'test_frac': 0.1, 'shuffle': True, 'num_workers': 0}
+2026-01-05 11:06:37,204 - rf_experiment - INFO - Encoding config: {'type': 'iq_grid', 'params': {'grid_size': 16, 'subsample': 4}}
+2026-01-05 11:06:37,205 - rf_experiment - INFO - Total logical dataset size: 4096 samples
+2026-01-05 11:06:37,205 - rf_experiment - INFO - Num classes (from dataset): 2
+2026-01-05 11:06:37,205 - rf_experiment - INFO - Splits: train=3276, val=409, test=411
+2026-01-05 11:06:37,208 - rf_experiment - INFO - Full dataset labels: {0: 2048, 1: 2048}
+2026-01-05 11:06:37,208 - rf_experiment - INFO - Full dataset SNRs: {0: 1024, 10: 1024, 20: 1024, 30: 1024}
+2026-01-05 11:06:37,208 - rf_experiment - INFO - Dataloader: batch_size=64, num_workers=0
+2026-01-05 11:06:37,209 - rf_experiment - INFO - Building model: {'type': 'conv2d_snn', 'params': {'input_channels': 1, 'conv_channels': [32, 64], 'kernel_sizes': [3, 3], 'grid_size': 16, 'lif_beta': 0.9, 'dropout': 0.0, 'pool': True, 'num_classes': 2}}
+2026-01-05 11:06:37,209 - rf_experiment - INFO - Building model with num_classes=2
+2026-01-05 11:06:37,227 - rf_experiment - INFO - Building trainer: {'trainer': 'bptt', 'loss': 'cross_entropy', 'optimizer': 'adam', 'lr': 0.0003, 'batch_size': 64, 'epochs': 30, 'max_time_steps': 256, 'grad_clip': 1.0, 'device': 'mps'}
+2026-01-05 11:06:37,654 - rf_experiment - INFO - Starting training loop...
+2026-01-05 11:06:37,654 - rf_experiment - INFO - [epoch 1/30] training...
+2026-01-05 11:07:05,979 - rf_experiment - INFO - Epoch 1 [50/52] loss=1.4394
+2026-01-05 11:07:06,819 - rf_experiment - INFO - [epoch 1] train_loss=1.9481, train_acc=0.4820
+2026-01-05 11:07:07,716 - rf_experiment - INFO - [epoch 1] val_loss=1.5914, val_acc=0.4817
+2026-01-05 11:07:07,716 - rf_experiment - INFO - [epoch 2/30] training...
+2026-01-05 11:07:35,321 - rf_experiment - INFO - Epoch 2 [50/52] loss=0.8071
+2026-01-05 11:07:36,119 - rf_experiment - INFO - [epoch 2] train_loss=0.9654, train_acc=0.4875
+2026-01-05 11:07:37,001 - rf_experiment - INFO - [epoch 2] val_loss=0.8602, val_acc=0.5232
+2026-01-05 11:07:37,001 - rf_experiment - INFO - [epoch 3/30] training...

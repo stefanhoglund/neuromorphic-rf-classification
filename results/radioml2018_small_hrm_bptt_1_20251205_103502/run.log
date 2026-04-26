@@ -1,0 +1,18 @@
+2025-12-05 10:35:02,282 - rf_experiment - INFO - Starting experiment: radioml2018_small_hrm_bptt_1
+2025-12-05 10:35:02,282 - rf_experiment - INFO - Run name: radioml2018_small_hrm_bptt_1_20251205_103502
+2025-12-05 10:35:02,282 - rf_experiment - INFO - Config file: configs/radioml2018_small_hrm_bptt_1.yaml
+2025-12-05 10:35:02,282 - rf_experiment - INFO - Saved resolved config to: results/radioml2018_small_hrm_bptt_1_20251205_103502/config.yaml
+2025-12-05 10:35:02,282 - rf_experiment - INFO - Run directory: results/radioml2018_small_hrm_bptt_1_20251205_103502
+2025-12-05 10:35:02,282 - rf_experiment - INFO - Using device: cpu
+2025-12-05 10:35:02,282 - rf_experiment - INFO - Torch version: 2.9.0
+2025-12-05 10:35:02,282 - rf_experiment - INFO - Dataset config: {'path': 'data/GOLD_XYZ_OSC.0001_1024.hdf5', 'name': 'radioml2018_structured', 'frames_per_combo': 1024, 'mods_to_use': [1, 2, 3, 4, 5, 6], 'snrs_to_use': [30], 'train_frac': 0.8, 'val_frac': 0.1, 'test_frac': 0.1, 'shuffle': True, 'num_workers': 0}
+2025-12-05 10:35:02,282 - rf_experiment - INFO - Encoding config: {'type': 'iq_grid', 'params': {'grid_size': 16, 'subsample': 4}}
+2025-12-05 10:35:02,283 - rf_experiment - INFO - Total logical dataset size: 6144 samples
+2025-12-05 10:35:02,283 - rf_experiment - INFO - Num classes (from dataset): 6
+2025-12-05 10:35:02,283 - rf_experiment - INFO - Splits: train=4915, val=614, test=615
+2025-12-05 10:35:02,283 - rf_experiment - INFO - Dataloader: batch_size=64, num_workers=0
+2025-12-05 10:35:02,283 - rf_experiment - INFO - Building model: {'type': 'hrm_rf', 'params': {'input_channels': 1, 'grid_size': 16, 'low_dim': 256, 'high_dim': 256, 'num_cycles': 4, 'num_classes': 6, 'dropout': 0.1, 'agg': 'mean'}}
+2025-12-05 10:35:02,283 - rf_experiment - INFO - Building model with num_classes=6
+2025-12-05 10:35:02,285 - rf_experiment - INFO - Building trainer: {'trainer': 'bptt', 'loss': 'cross_entropy', 'optimizer': 'adam', 'lr': 0.001, 'batch_size': 64, 'epochs': 20, 'max_time_steps': 256, 'grad_clip': 1.0, 'device': 'cpu', 'lr_scheduler': {'type': 'cosine', 'step_size': 10, 'gamma': 0.1}}
+2025-12-05 10:35:02,765 - rf_experiment - INFO - Starting training loop...
+2025-12-05 10:35:02,765 - rf_experiment - INFO - [epoch 1/20] training...

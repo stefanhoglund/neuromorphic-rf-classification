@@ -1,0 +1,26 @@
+2026-01-05 22:40:22,775 - rf_experiment - INFO - Starting experiment: project_runs_2_2_conv2d_iqgrid_bptt_lr_sched
+2026-01-05 22:40:22,775 - rf_experiment - INFO - Run name: project_runs_2_2_conv2d_iqgrid_bptt_lr_sched_20260105_224022
+2026-01-05 22:40:22,775 - rf_experiment - INFO - Config file: configs/project_runs_7_1_conv2d_iqgrid_bptt_lr.yaml
+2026-01-05 22:40:22,775 - rf_experiment - INFO - Saved resolved config to: results/project_runs_2_2_conv2d_iqgrid_bptt_lr_sched_20260105_224022/config.yaml
+2026-01-05 22:40:22,775 - rf_experiment - INFO - Run directory: results/project_runs_2_2_conv2d_iqgrid_bptt_lr_sched_20260105_224022
+2026-01-05 22:40:22,792 - rf_experiment - INFO - Using device: mps
+2026-01-05 22:40:22,792 - rf_experiment - INFO - Using device: mps
+2026-01-05 22:40:22,792 - rf_experiment - INFO - Torch version: 2.9.0
+2026-01-05 22:40:22,792 - rf_experiment - INFO - Dataset config: {'path': 'data/GOLD_XYZ_OSC.0001_1024.hdf5', 'name': 'radioml2018_structured', 'frames_per_combo': 4096, 'mods_to_use': None, 'snrs_to_use': None, 'train_frac': 0.8, 'val_frac': 0.1, 'test_frac': 0.1, 'shuffle': True, 'num_workers': 0}
+2026-01-05 22:40:22,792 - rf_experiment - INFO - Encoding config: {'type': 'iq_grid', 'params': {'grid_size': 16, 'subsample': 4}}
+2026-01-05 22:40:22,814 - rf_experiment - INFO - Total logical dataset size: 2555904 samples
+2026-01-05 22:40:22,814 - rf_experiment - INFO - Num classes (from dataset): 24
+2026-01-05 22:40:22,814 - rf_experiment - INFO - Splits: train=2044723, val=255590, test=255591
+2026-01-05 22:40:22,881 - rf_experiment - INFO - Full dataset labels: {0: 106496, 1: 106496, 2: 106496, 3: 106496, 4: 106496, 5: 106496, 6: 106496, 7: 106496, 8: 106496, 9: 106496, 10: 106496, 11: 106496, 12: 106496, 13: 106496, 14: 106496, 15: 106496, 16: 106496, 17: 106496, 18: 106496, 19: 106496, 20: 106496, 21: 106496, 22: 106496, 23: 106496}
+2026-01-05 22:40:22,881 - rf_experiment - INFO - Full dataset SNRs: {-20: 98304, -18: 98304, -16: 98304, -14: 98304, -12: 98304, -10: 98304, -8: 98304, -6: 98304, -4: 98304, -2: 98304, 0: 98304, 2: 98304, 4: 98304, 6: 98304, 8: 98304, 10: 98304, 12: 98304, 14: 98304, 16: 98304, 18: 98304, 20: 98304, 22: 98304, 24: 98304, 26: 98304, 28: 98304, 30: 98304}
+2026-01-05 22:40:22,881 - rf_experiment - INFO - Dataloader: batch_size=64, num_workers=0
+2026-01-05 22:40:22,882 - rf_experiment - INFO - Building model: {'type': 'conv2d_snn', 'params': {'input_channels': 1, 'conv_channels': [64, 128], 'kernel_sizes': [3, 3], 'grid_size': 16, 'lif_beta': 0.9, 'dropout': 0.0, 'pool': True, 'num_classes': 24}}
+2026-01-05 22:40:22,882 - rf_experiment - INFO - Building model with num_classes=24
+2026-01-05 22:40:22,902 - rf_experiment - INFO - Building trainer: {'trainer': 'bptt', 'loss': 'cross_entropy', 'optimizer': 'adam', 'lr': 0.0003, 'lr_scheduler': {'type': 'cosine', 'step_size': 10, 'gamma': 0.1}, 'weight_decay': '1e-4', 'batch_size': 64, 'epochs': 40, 'max_time_steps': 256, 'grad_clip': 1.0, 'device': 'mps'}
+2026-01-05 22:40:23,392 - rf_experiment - INFO - Starting training loop...
+2026-01-05 22:40:23,392 - rf_experiment - INFO - [epoch 1/40] training...
+2026-01-05 22:40:56,688 - rf_experiment - INFO - Epoch 1 [50/31949] loss=4.9170[epoch 1] lr=0.000300
+2026-01-05 22:41:29,748 - rf_experiment - INFO - Epoch 1 [100/31949] loss=4.2248[epoch 1] lr=0.000300
+2026-01-05 22:42:02,714 - rf_experiment - INFO - Epoch 1 [150/31949] loss=3.7659[epoch 1] lr=0.000300
+2026-01-05 22:42:35,830 - rf_experiment - INFO - Epoch 1 [200/31949] loss=3.3600[epoch 1] lr=0.000300
+2026-01-05 22:43:08,946 - rf_experiment - INFO - Epoch 1 [250/31949] loss=2.7983[epoch 1] lr=0.000300

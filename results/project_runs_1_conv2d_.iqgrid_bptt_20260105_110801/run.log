@@ -1,0 +1,36 @@
+2026-01-05 11:08:01,182 - rf_experiment - INFO - Starting experiment: project_runs_1_conv2d_.iqgrid_bptt
+2026-01-05 11:08:01,182 - rf_experiment - INFO - Run name: project_runs_1_conv2d_.iqgrid_bptt_20260105_110801
+2026-01-05 11:08:01,182 - rf_experiment - INFO - Config file: configs/project_runs_1_conv2d_.iqgrid_bptt.yaml
+2026-01-05 11:08:01,182 - rf_experiment - INFO - Saved resolved config to: results/project_runs_1_conv2d_.iqgrid_bptt_20260105_110801/config.yaml
+2026-01-05 11:08:01,182 - rf_experiment - INFO - Run directory: results/project_runs_1_conv2d_.iqgrid_bptt_20260105_110801
+2026-01-05 11:08:01,192 - rf_experiment - INFO - Using device: mps
+2026-01-05 11:08:01,192 - rf_experiment - INFO - Using device: mps
+2026-01-05 11:08:01,192 - rf_experiment - INFO - Torch version: 2.9.0
+2026-01-05 11:08:01,192 - rf_experiment - INFO - Dataset config: {'path': 'data/GOLD_XYZ_OSC.0001_1024.hdf5', 'name': 'radioml2018_structured', 'frames_per_combo': 512, 'mods_to_use': [1, 2], 'snrs_to_use': [0, 10, 20, 30], 'train_frac': 0.8, 'val_frac': 0.1, 'test_frac': 0.1, 'shuffle': True, 'num_workers': 0}
+2026-01-05 11:08:01,192 - rf_experiment - INFO - Encoding config: {'type': 'iq_grid', 'params': {'grid_size': 16, 'subsample': 4}}
+2026-01-05 11:08:01,192 - rf_experiment - INFO - Total logical dataset size: 4096 samples
+2026-01-05 11:08:01,192 - rf_experiment - INFO - Num classes (from dataset): 2
+2026-01-05 11:08:01,192 - rf_experiment - INFO - Splits: train=3276, val=409, test=411
+2026-01-05 11:08:01,193 - rf_experiment - INFO - Full dataset labels: {0: 2048, 1: 2048}
+2026-01-05 11:08:01,193 - rf_experiment - INFO - Full dataset SNRs: {0: 1024, 10: 1024, 20: 1024, 30: 1024}
+2026-01-05 11:08:01,193 - rf_experiment - INFO - Dataloader: batch_size=64, num_workers=0
+2026-01-05 11:08:01,193 - rf_experiment - INFO - Building model: {'type': 'conv2d_snn', 'params': {'input_channels': 1, 'conv_channels': [32, 64], 'kernel_sizes': [3, 3], 'grid_size': 16, 'lif_beta': 0.9, 'dropout': 0.0, 'pool': True, 'num_classes': 2}}
+2026-01-05 11:08:01,193 - rf_experiment - INFO - Building model with num_classes=2
+2026-01-05 11:08:01,201 - rf_experiment - INFO - Building trainer: {'trainer': 'bptt', 'loss': 'cross_entropy', 'optimizer': 'adam', 'lr': 0.0003, 'batch_size': 64, 'epochs': 2, 'max_time_steps': 256, 'grad_clip': 1.0, 'device': 'mps'}
+2026-01-05 11:08:01,589 - rf_experiment - INFO - Starting training loop...
+2026-01-05 11:08:01,589 - rf_experiment - INFO - [epoch 1/2] training...
+2026-01-05 11:08:29,478 - rf_experiment - INFO - Epoch 1 [50/52] loss=0.9232
+2026-01-05 11:08:30,381 - rf_experiment - INFO - [epoch 1] train_loss=3.3087, train_acc=0.5134
+2026-01-05 11:08:31,388 - rf_experiment - INFO - [epoch 1] val_loss=0.7982, val_acc=0.5819
+2026-01-05 11:08:31,388 - rf_experiment - INFO - [epoch 2/2] training...
+2026-01-05 11:08:59,441 - rf_experiment - INFO - Epoch 2 [50/52] loss=1.3469
+2026-01-05 11:09:00,252 - rf_experiment - INFO - [epoch 2] train_loss=0.9241, train_acc=0.5284
+2026-01-05 11:09:01,165 - rf_experiment - INFO - [epoch 2] val_loss=0.8166, val_acc=0.5746
+2026-01-05 11:09:01,166 - rf_experiment - INFO - Evaluating on test set with best-val checkpoint...
+2026-01-05 11:09:02,072 - rf_experiment - INFO - Saved metrics to results/project_runs_1_conv2d_.iqgrid_bptt_20260105_110801/metrics.json
+2026-01-05 11:09:02,072 - rf_experiment - INFO - Finished experiment: project_runs_1_conv2d_.iqgrid_bptt
+2026-01-05 11:09:02,072 - rf_experiment - INFO - Best val metrics: {'loss': 0.7982066384446067, 'acc': 0.5819070904645477, 'per_snr_acc': {20: 0.5876288659793815, 0: 0.4948453608247423, 30: 0.5794392523364486, 10: 0.6574074074074074}}
+2026-01-05 11:09:02,072 - rf_experiment - INFO - Test metrics: {'loss': 0.8580516196805485, 'acc': 0.48661800486618007, 'per_snr_acc': {30: 0.5740740740740741, 10: 0.37373737373737376, 0: 0.504950495049505, 20: 0.4854368932038835}}
+2026-01-05 11:09:02,073 - rf_experiment - INFO - Finished experiment: project_runs_1_conv2d_.iqgrid_bptt
+2026-01-05 11:09:02,073 - rf_experiment - INFO - Best val metrics: {'loss': 0.7982066384446067, 'acc': 0.5819070904645477, 'per_snr_acc': {20: 0.5876288659793815, 0: 0.4948453608247423, 30: 0.5794392523364486, 10: 0.6574074074074074}}
+2026-01-05 11:09:02,073 - rf_experiment - INFO - Test metrics: {'loss': 0.8580516196805485, 'acc': 0.48661800486618007, 'per_snr_acc': {30: 0.5740740740740741, 10: 0.37373737373737376, 0: 0.504950495049505, 20: 0.4854368932038835}}

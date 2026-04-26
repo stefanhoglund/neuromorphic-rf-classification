@@ -1,0 +1,41 @@
+2025-12-07 14:20:39,285 - rf_experiment - INFO - Starting experiment: radioml2018_small_hrm_bptt_1
+2025-12-07 14:20:39,285 - rf_experiment - INFO - Run name: radioml2018_small_hrm_bptt_1_20251207_142039
+2025-12-07 14:20:39,285 - rf_experiment - INFO - Config file: configs/radioml2018_small_hrm_bptt_1.yaml
+2025-12-07 14:20:39,285 - rf_experiment - INFO - Saved resolved config to: results/radioml2018_small_hrm_bptt_1_20251207_142039/config.yaml
+2025-12-07 14:20:39,285 - rf_experiment - INFO - Run directory: results/radioml2018_small_hrm_bptt_1_20251207_142039
+2025-12-07 14:20:39,299 - rf_experiment - INFO - Using device: mps
+2025-12-07 14:20:39,299 - rf_experiment - INFO - Using device: mps
+2025-12-07 14:20:39,299 - rf_experiment - INFO - Torch version: 2.9.0
+2025-12-07 14:20:39,299 - rf_experiment - INFO - Dataset config: {'path': 'data/GOLD_XYZ_OSC.0001_1024.hdf5', 'name': 'radioml2018_structured', 'frames_per_combo': 1024, 'mods_to_use': [1, 2, 3, 4, 5, 6], 'snrs_to_use': [30], 'train_frac': 0.8, 'val_frac': 0.1, 'test_frac': 0.1, 'shuffle': True, 'num_workers': 0}
+2025-12-07 14:20:39,299 - rf_experiment - INFO - Encoding config: {'type': 'iq_grid', 'params': {'grid_size': 16, 'subsample': 4}}
+2025-12-07 14:20:39,299 - rf_experiment - INFO - Total logical dataset size: 6144 samples
+2025-12-07 14:20:39,299 - rf_experiment - INFO - Num classes (from dataset): 6
+2025-12-07 14:20:39,299 - rf_experiment - INFO - Splits: train=4915, val=614, test=615
+2025-12-07 14:20:39,299 - rf_experiment - INFO - Dataloader: batch_size=64, num_workers=0
+2025-12-07 14:20:39,300 - rf_experiment - INFO - Building model: {'type': 'hrm_rf', 'params': {'input_channels': 1, 'grid_size': 16, 'low_dim': 256, 'high_dim': 256, 'num_cycles': 4, 'num_classes': 6, 'dropout': 0.1, 'agg': 'mean'}}
+2025-12-07 14:20:39,300 - rf_experiment - INFO - Building model with num_classes=6
+2025-12-07 14:20:39,319 - rf_experiment - INFO - Building trainer: {'trainer': 'bptt', 'loss': 'cross_entropy', 'optimizer': 'adam', 'lr': 0.001, 'batch_size': 64, 'epochs': 5, 'max_time_steps': 256, 'grad_clip': 1.0, 'device': 'mps', 'lr_scheduler': {'type': 'cosine', 'step_size': 10, 'gamma': 0.1}}
+2025-12-07 14:20:39,748 - rf_experiment - INFO - Starting training loop...
+2025-12-07 14:20:39,748 - rf_experiment - INFO - [epoch 1/5] training...
+2025-12-07 14:21:06,305 - rf_experiment - INFO - [epoch 1] train_loss=1.3591, train_acc=0.3259
+2025-12-07 14:21:07,206 - rf_experiment - INFO - [epoch 1] val_loss=1.0079, val_acc=0.4479
+2025-12-07 14:21:07,206 - rf_experiment - INFO - [epoch 2/5] training...
+2025-12-07 14:21:34,057 - rf_experiment - INFO - [epoch 2] train_loss=0.9867, train_acc=0.4643
+2025-12-07 14:21:34,920 - rf_experiment - INFO - [epoch 2] val_loss=0.8593, val_acc=0.4707
+2025-12-07 14:21:34,920 - rf_experiment - INFO - [epoch 3/5] training...
+2025-12-07 14:22:01,431 - rf_experiment - INFO - [epoch 3] train_loss=0.8519, train_acc=0.4863
+2025-12-07 14:22:02,276 - rf_experiment - INFO - [epoch 3] val_loss=0.8365, val_acc=0.5000
+2025-12-07 14:22:02,276 - rf_experiment - INFO - [epoch 4/5] training...
+2025-12-07 14:22:28,689 - rf_experiment - INFO - [epoch 4] train_loss=0.8038, train_acc=0.5038
+2025-12-07 14:22:29,507 - rf_experiment - INFO - [epoch 4] val_loss=0.8102, val_acc=0.4984
+2025-12-07 14:22:29,507 - rf_experiment - INFO - [epoch 5/5] training...
+2025-12-07 14:22:55,037 - rf_experiment - INFO - [epoch 5] train_loss=0.7806, train_acc=0.5312
+2025-12-07 14:22:55,877 - rf_experiment - INFO - [epoch 5] val_loss=0.8008, val_acc=0.5456
+2025-12-07 14:22:55,878 - rf_experiment - INFO - Evaluating on test set...
+2025-12-07 14:22:56,723 - rf_experiment - INFO - Saved metrics to results/radioml2018_small_hrm_bptt_1_20251207_142039/metrics.json
+2025-12-07 14:22:56,723 - rf_experiment - INFO - Finished experiment: radioml2018_small_hrm_bptt_1
+2025-12-07 14:22:56,723 - rf_experiment - INFO - Best val metrics: {'loss': 0.8007977932982802, 'acc': 0.5456026058631922, 'per_snr_acc': {30: 0.5456026058631922}}
+2025-12-07 14:22:56,723 - rf_experiment - INFO - Test metrics: {'loss': 0.7685296887304724, 'acc': 0.5707317073170731, 'per_snr_acc': {30: 0.5707317073170731}}
+2025-12-07 14:22:56,723 - rf_experiment - INFO - Finished experiment: radioml2018_small_hrm_bptt_1
+2025-12-07 14:22:56,723 - rf_experiment - INFO - Best val metrics: {'loss': 0.8007977932982802, 'acc': 0.5456026058631922, 'per_snr_acc': {30: 0.5456026058631922}}
+2025-12-07 14:22:56,723 - rf_experiment - INFO - Test metrics: {'loss': 0.7685296887304724, 'acc': 0.5707317073170731, 'per_snr_acc': {30: 0.5707317073170731}}

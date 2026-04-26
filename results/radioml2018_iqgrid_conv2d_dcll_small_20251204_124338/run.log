@@ -1,0 +1,18 @@
+2025-12-04 12:43:38,311 - rf_experiment - INFO - Starting experiment: radioml2018_iqgrid_conv2d_dcll_small
+2025-12-04 12:43:38,311 - rf_experiment - INFO - Run name: radioml2018_iqgrid_conv2d_dcll_small_20251204_124338
+2025-12-04 12:43:38,311 - rf_experiment - INFO - Config file: configs/radioml2018_sigma_delta_conv2d_bptt_small_2.yaml
+2025-12-04 12:43:38,311 - rf_experiment - INFO - Saved resolved config to: results/radioml2018_iqgrid_conv2d_dcll_small_20251204_124338/config.yaml
+2025-12-04 12:43:38,311 - rf_experiment - INFO - Run directory: results/radioml2018_iqgrid_conv2d_dcll_small_20251204_124338
+2025-12-04 12:43:38,311 - rf_experiment - INFO - Using device: cpu
+2025-12-04 12:43:38,311 - rf_experiment - INFO - Torch version: 2.9.0
+2025-12-04 12:43:38,311 - rf_experiment - INFO - Dataset config: {'path': 'data/GOLD_XYZ_OSC.0001_1024.hdf5', 'name': 'radioml2018_structured', 'frames_per_combo': 2048, 'mods_to_use': [3, 4], 'snrs_to_use': [-4, 0, 4, 8, 12], 'train_frac': 0.8, 'val_frac': 0.1, 'test_frac': 0.1, 'shuffle': True, 'num_workers': 0}
+2025-12-04 12:43:38,311 - rf_experiment - INFO - Encoding config: {'type': 'sigma_delta', 'params': {'grid_size': 16, 'subsample': 1}}
+2025-12-04 12:43:38,311 - rf_experiment - INFO - Total logical dataset size: 20480 samples
+2025-12-04 12:43:38,311 - rf_experiment - INFO - Num classes (from dataset): 2
+2025-12-04 12:43:38,311 - rf_experiment - INFO - Splits: train=16384, val=2048, test=2048
+2025-12-04 12:43:38,312 - rf_experiment - INFO - Dataloader: batch_size=16, num_workers=0
+2025-12-04 12:43:38,312 - rf_experiment - INFO - Building model: {'type': 'conv2d_snn', 'params': {'input_channels': 1, 'conv_channels': [32, 64], 'kernel_sizes': [3, 3], 'grid_size': 16, 'lif_beta': 0.9, 'dropout': 0.1, 'pool': True, 'num_classes': 2}}
+2025-12-04 12:43:38,312 - rf_experiment - INFO - Building model with num_classes=2
+2025-12-04 12:43:38,313 - rf_experiment - INFO - Building trainer: {'trainer': 'bptt', 'loss': 'cross_entropy', 'optimizer': 'adam', 'lr': 0.001, 'batch_size': 16, 'epochs': 3, 'max_time_steps': 256, 'grad_clip': 1.0, 'device': 'cpu'}
+2025-12-04 12:43:38,784 - rf_experiment - INFO - Starting training loop...
+2025-12-04 12:43:38,785 - rf_experiment - INFO - [epoch 1/3] training...

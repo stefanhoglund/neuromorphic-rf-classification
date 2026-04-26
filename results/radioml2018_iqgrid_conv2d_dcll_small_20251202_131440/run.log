@@ -1,0 +1,9 @@
+2025-12-02 13:14:40,253 - rf_experiment - INFO - Starting experiment: radioml2018_iqgrid_conv2d_dcll_small
+2025-12-02 13:14:40,253 - rf_experiment - INFO - Run name: radioml2018_iqgrid_conv2d_dcll_small_20251202_131440
+2025-12-02 13:14:40,253 - rf_experiment - INFO - Config file: configs/radioml2018_iqgrid_conv2d_dcll_small_2.yaml
+2025-12-02 13:14:40,253 - rf_experiment - INFO - Saved resolved config to: results/radioml2018_iqgrid_conv2d_dcll_small_20251202_131440/config.yaml
+2025-12-02 13:14:40,253 - rf_experiment - INFO - Run directory: results/radioml2018_iqgrid_conv2d_dcll_small_20251202_131440
+2025-12-02 13:14:40,253 - rf_experiment - INFO - Using device: cpu
+2025-12-02 13:14:40,253 - rf_experiment - INFO - Torch version: 2.9.0
+2025-12-02 13:14:40,253 - rf_experiment - INFO - Dataset config: {'path': 'data/GOLD_XYZ_OSC.0001_1024.hdf5', 'name': 'radioml2018_structured', 'frames_per_combo': 32, 'mods_to_use': [3, 4], 'snrs_to_use': [0, 10], 'train_frac': 0.8, 'val_frac': 0.1, 'test_frac': 0.1, 'shuffle': True, 'num_workers': 0}
+2025-12-02 13:14:40,253 - rf_experiment - INFO - Encoding config: {'type': 'sigma_delta', 'params': {'grid_size': 16, 'subsample': 4}}

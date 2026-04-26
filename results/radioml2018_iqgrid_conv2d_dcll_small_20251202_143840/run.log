@@ -1,0 +1,31 @@
+2025-12-02 14:38:40,863 - rf_experiment - INFO - Starting experiment: radioml2018_iqgrid_conv2d_dcll_small
+2025-12-02 14:38:40,863 - rf_experiment - INFO - Run name: radioml2018_iqgrid_conv2d_dcll_small_20251202_143840
+2025-12-02 14:38:40,863 - rf_experiment - INFO - Config file: configs/radioml2018_iqgrid_lsm_dcll_small_2_tf_events.yaml
+2025-12-02 14:38:40,863 - rf_experiment - INFO - Saved resolved config to: results/radioml2018_iqgrid_conv2d_dcll_small_20251202_143840/config.yaml
+2025-12-02 14:38:40,863 - rf_experiment - INFO - Run directory: results/radioml2018_iqgrid_conv2d_dcll_small_20251202_143840
+2025-12-02 14:38:40,863 - rf_experiment - INFO - Using device: cpu
+2025-12-02 14:38:40,863 - rf_experiment - INFO - Torch version: 2.9.0
+2025-12-02 14:38:40,863 - rf_experiment - INFO - Dataset config: {'path': 'data/GOLD_XYZ_OSC.0001_1024.hdf5', 'name': 'radioml2018_structured', 'frames_per_combo': 2048, 'mods_to_use': [3, 4], 'snrs_to_use': [-4, 0, 4, 8, 12], 'train_frac': 0.8, 'val_frac': 0.1, 'test_frac': 0.1, 'shuffle': True, 'num_workers': 0}
+2025-12-02 14:38:40,863 - rf_experiment - INFO - Encoding config: {'type': 'tf_events', 'params': {'grid_size': 16, 'subsample': 1}}
+2025-12-02 14:38:40,863 - rf_experiment - INFO - Total logical dataset size: 20480 samples
+2025-12-02 14:38:40,863 - rf_experiment - INFO - Num classes (from dataset): 2
+2025-12-02 14:38:40,863 - rf_experiment - INFO - Splits: train=16384, val=2048, test=2048
+2025-12-02 14:38:40,864 - rf_experiment - INFO - Dataloader: batch_size=16, num_workers=0
+2025-12-02 14:38:40,864 - rf_experiment - INFO - Building model: {'type': 'lsm', 'params': {'reservoir_size': 512, 'leak': 0.9, 'spectral_radius': 0.9, 'input_scaling': 1.0, 'sparsity': 0.1, 'train_reservoir': False, 'readout_agg': 'mean', 'num_classes': 2}}
+2025-12-02 14:38:40,864 - rf_experiment - INFO - Building model with num_classes=2
+2025-12-02 14:38:40,865 - rf_experiment - INFO - Building trainer: {'trainer': 'dcll', 'loss': 'cross_entropy', 'optimizer': 'adam', 'lr': 0.001, 'batch_size': 16, 'epochs': 3, 'max_time_steps': 256, 'grad_clip': 1.0, 'device': 'cpu'}
+2025-12-02 14:38:41,302 - rf_experiment - INFO - Starting training loop...
+2025-12-02 14:38:41,302 - rf_experiment - INFO - [epoch 1/3] training...
+2025-12-02 14:38:53,039 - rf_experiment - INFO - [epoch 1] train_loss=0.5340, train_acc=0.7460
+2025-12-02 14:38:54,342 - rf_experiment - INFO - [epoch 1] val_loss=0.4733, val_acc=0.7847
+2025-12-02 14:38:54,342 - rf_experiment - INFO - [epoch 2/3] training...
+2025-12-02 14:39:05,132 - rf_experiment - INFO - [epoch 2] train_loss=0.4383, train_acc=0.8026
+2025-12-02 14:39:06,437 - rf_experiment - INFO - [epoch 2] val_loss=0.4634, val_acc=0.7886
+2025-12-02 14:39:06,437 - rf_experiment - INFO - [epoch 3/3] training...
+2025-12-02 14:39:17,168 - rf_experiment - INFO - [epoch 3] train_loss=0.4111, train_acc=0.8151
+2025-12-02 14:39:18,456 - rf_experiment - INFO - [epoch 3] val_loss=0.4257, val_acc=0.8057
+2025-12-02 14:39:18,456 - rf_experiment - INFO - Evaluating on test set...
+2025-12-02 14:39:19,748 - rf_experiment - INFO - Saved metrics to results/radioml2018_iqgrid_conv2d_dcll_small_20251202_143840/metrics.json
+2025-12-02 14:39:19,748 - rf_experiment - INFO - Finished experiment: radioml2018_iqgrid_conv2d_dcll_small
+2025-12-02 14:39:19,748 - rf_experiment - INFO - Best val metrics: {'loss': 0.4257207599002868, 'acc': 0.8056640625, 'per_snr_acc': {-4: 0.5901639344262295, 12: 0.8922305764411027, 0: 0.8341836734693877, 8: 0.8606965174129353, 4: 0.8621495327102804}}
+2025-12-02 14:39:19,748 - rf_experiment - INFO - Test metrics: {'loss': 0.4130026667844504, 'acc': 0.80908203125, 'per_snr_acc': {0: 0.7939814814814815, 12: 0.9044289044289044, -4: 0.616822429906542, 4: 0.8846153846153846, 8: 0.8607594936708861}}

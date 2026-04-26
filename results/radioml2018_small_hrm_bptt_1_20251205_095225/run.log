@@ -1,0 +1,37 @@
+2025-12-05 09:52:25,010 - rf_experiment - INFO - Starting experiment: radioml2018_small_hrm_bptt_1
+2025-12-05 09:52:25,010 - rf_experiment - INFO - Run name: radioml2018_small_hrm_bptt_1_20251205_095225
+2025-12-05 09:52:25,010 - rf_experiment - INFO - Config file: configs/radioml2018_small_hrm_bptt_1.yaml
+2025-12-05 09:52:25,010 - rf_experiment - INFO - Saved resolved config to: results/radioml2018_small_hrm_bptt_1_20251205_095225/config.yaml
+2025-12-05 09:52:25,010 - rf_experiment - INFO - Run directory: results/radioml2018_small_hrm_bptt_1_20251205_095225
+2025-12-05 09:52:25,010 - rf_experiment - INFO - Using device: cpu
+2025-12-05 09:52:25,010 - rf_experiment - INFO - Torch version: 2.9.0
+2025-12-05 09:52:25,010 - rf_experiment - INFO - Dataset config: {'path': 'data/GOLD_XYZ_OSC.0001_1024.hdf5', 'name': 'radioml2018_structured', 'frames_per_combo': 1024, 'mods_to_use': [1, 2, 3, 4], 'snrs_to_use': [30], 'train_frac': 0.8, 'val_frac': 0.1, 'test_frac': 0.1, 'shuffle': True, 'num_workers': 0}
+2025-12-05 09:52:25,011 - rf_experiment - INFO - Encoding config: {'type': 'iq_grid', 'params': {'grid_size': 16, 'subsample': 4}}
+2025-12-05 09:52:25,011 - rf_experiment - INFO - Total logical dataset size: 4096 samples
+2025-12-05 09:52:25,011 - rf_experiment - INFO - Num classes (from dataset): 4
+2025-12-05 09:52:25,011 - rf_experiment - INFO - Splits: train=3276, val=409, test=411
+2025-12-05 09:52:25,011 - rf_experiment - INFO - Dataloader: batch_size=64, num_workers=0
+2025-12-05 09:52:25,011 - rf_experiment - INFO - Building model: {'type': 'hrm_rf', 'params': {'input_channels': 1, 'grid_size': 16, 'low_dim': 256, 'high_dim': 256, 'num_cycles': 4, 'num_classes': 4, 'dropout': 0.1, 'agg': 'mean'}}
+2025-12-05 09:52:25,011 - rf_experiment - INFO - Building model with num_classes=4
+2025-12-05 09:52:25,013 - rf_experiment - INFO - Building trainer: {'trainer': 'bptt', 'loss': 'cross_entropy', 'optimizer': 'adam', 'lr': 0.0003, 'batch_size': 64, 'epochs': 5, 'max_time_steps': 256, 'grad_clip': 1.0, 'device': 'cpu', 'lr_scheduler': {'type': 'cosine', 'step_size': 10, 'gamma': 0.1}}
+2025-12-05 09:52:25,411 - rf_experiment - INFO - Starting training loop...
+2025-12-05 09:52:25,411 - rf_experiment - INFO - [epoch 1/5] training...
+2025-12-05 09:53:06,535 - rf_experiment - INFO - [epoch 1] train_loss=1.2441, train_acc=0.3864
+2025-12-05 09:53:10,385 - rf_experiment - INFO - [epoch 1] val_loss=1.3918, val_acc=0.3912
+2025-12-05 09:53:10,385 - rf_experiment - INFO - [epoch 2/5] training...
+2025-12-05 09:53:52,842 - rf_experiment - INFO - [epoch 2] train_loss=0.8931, train_acc=0.4969
+2025-12-05 09:53:56,467 - rf_experiment - INFO - [epoch 2] val_loss=0.7324, val_acc=0.6015
+2025-12-05 09:53:56,468 - rf_experiment - INFO - [epoch 3/5] training...
+2025-12-05 09:54:39,031 - rf_experiment - INFO - [epoch 3] train_loss=0.7207, train_acc=0.5491
+2025-12-05 09:54:42,425 - rf_experiment - INFO - [epoch 3] val_loss=0.7076, val_acc=0.6039
+2025-12-05 09:54:42,425 - rf_experiment - INFO - [epoch 4/5] training...
+2025-12-05 09:55:25,661 - rf_experiment - INFO - [epoch 4] train_loss=0.6817, train_acc=0.6081
+2025-12-05 09:55:30,117 - rf_experiment - INFO - [epoch 4] val_loss=0.6600, val_acc=0.6773
+2025-12-05 09:55:30,118 - rf_experiment - INFO - [epoch 5/5] training...
+2025-12-05 09:56:15,726 - rf_experiment - INFO - [epoch 5] train_loss=0.6523, train_acc=0.6499
+2025-12-05 09:56:19,598 - rf_experiment - INFO - [epoch 5] val_loss=0.6584, val_acc=0.6577
+2025-12-05 09:56:19,599 - rf_experiment - INFO - Evaluating on test set...
+2025-12-05 09:56:23,349 - rf_experiment - INFO - Saved metrics to results/radioml2018_small_hrm_bptt_1_20251205_095225/metrics.json
+2025-12-05 09:56:23,350 - rf_experiment - INFO - Finished experiment: radioml2018_small_hrm_bptt_1
+2025-12-05 09:56:23,350 - rf_experiment - INFO - Best val metrics: {'loss': 0.6599961647486046, 'acc': 0.6772616136919315, 'per_snr_acc': {30: 0.6772616136919315}}
+2025-12-05 09:56:23,350 - rf_experiment - INFO - Test metrics: {'loss': 0.6574523547560049, 'acc': 0.6301703163017032, 'per_snr_acc': {30: 0.6301703163017032}}

@@ -1,0 +1,49 @@
+2026-01-05 22:28:31,162 - rf_experiment - INFO - Starting experiment: project_runs_1_conv2d_.iqgrid_bptt
+2026-01-05 22:28:31,162 - rf_experiment - INFO - Run name: project_runs_1_conv2d_.iqgrid_bptt_20260105_222831
+2026-01-05 22:28:31,162 - rf_experiment - INFO - Config file: configs/project_runs_1_conv2d_iqgrid_bptt.yaml
+2026-01-05 22:28:31,162 - rf_experiment - INFO - Saved resolved config to: results/project_runs_1_conv2d_.iqgrid_bptt_20260105_222831/config.yaml
+2026-01-05 22:28:31,162 - rf_experiment - INFO - Run directory: results/project_runs_1_conv2d_.iqgrid_bptt_20260105_222831
+2026-01-05 22:28:31,180 - rf_experiment - INFO - Using device: mps
+2026-01-05 22:28:31,180 - rf_experiment - INFO - Using device: mps
+2026-01-05 22:28:31,180 - rf_experiment - INFO - Torch version: 2.9.0
+2026-01-05 22:28:31,180 - rf_experiment - INFO - Dataset config: {'path': 'data/GOLD_XYZ_OSC.0001_1024.hdf5', 'name': 'radioml2018_structured', 'frames_per_combo': 512, 'mods_to_use': [1, 2], 'snrs_to_use': [0, 10, 20, 30], 'train_frac': 0.8, 'val_frac': 0.1, 'test_frac': 0.1, 'shuffle': True, 'num_workers': 0}
+2026-01-05 22:28:31,180 - rf_experiment - INFO - Encoding config: {'type': 'iq_grid', 'params': {'grid_size': 16, 'subsample': 4}}
+2026-01-05 22:28:31,180 - rf_experiment - INFO - Total logical dataset size: 4096 samples
+2026-01-05 22:28:31,180 - rf_experiment - INFO - Num classes (from dataset): 2
+2026-01-05 22:28:31,180 - rf_experiment - INFO - Splits: train=3276, val=409, test=411
+2026-01-05 22:28:31,183 - rf_experiment - INFO - Full dataset labels: {0: 2048, 1: 2048}
+2026-01-05 22:28:31,183 - rf_experiment - INFO - Full dataset SNRs: {0: 1024, 10: 1024, 20: 1024, 30: 1024}
+2026-01-05 22:28:31,183 - rf_experiment - INFO - Dataloader: batch_size=64, num_workers=0
+2026-01-05 22:28:31,184 - rf_experiment - INFO - Building model: {'type': 'conv2d_snn', 'params': {'input_channels': 1, 'conv_channels': [32, 64], 'kernel_sizes': [3, 3], 'grid_size': 16, 'lif_beta': 0.9, 'dropout': 0.0, 'pool': True, 'num_classes': 2}}
+2026-01-05 22:28:31,184 - rf_experiment - INFO - Building model with num_classes=2
+2026-01-05 22:28:31,201 - rf_experiment - INFO - Building trainer: {'trainer': 'bptt', 'loss': 'cross_entropy', 'optimizer': 'adam', 'lr': 0.0003, 'batch_size': 64, 'epochs': 5, 'max_time_steps': 256, 'grad_clip': 1.0, 'device': 'mps'}
+2026-01-05 22:28:31,669 - rf_experiment - INFO - Starting training loop...
+2026-01-05 22:28:31,669 - rf_experiment - INFO - [epoch 1/5] training...
+2026-01-05 22:28:59,604 - rf_experiment - INFO - Epoch 1 [50/52] loss=0.8912[epoch 1] lr=0.000300
+2026-01-05 22:29:00,457 - rf_experiment - INFO - [epoch 1] train_loss=2.4355, train_acc=0.5195
+2026-01-05 22:29:01,394 - rf_experiment - INFO - [epoch 1] val_loss=0.9406, val_acc=0.4890
+2026-01-05 22:29:01,394 - rf_experiment - INFO - [epoch 2/5] training...
+2026-01-05 22:29:29,293 - rf_experiment - INFO - Epoch 2 [50/52] loss=0.7249[epoch 2] lr=0.000300
+2026-01-05 22:29:30,102 - rf_experiment - INFO - [epoch 2] train_loss=0.8805, train_acc=0.5491
+2026-01-05 22:29:31,043 - rf_experiment - INFO - [epoch 2] val_loss=0.7602, val_acc=0.5452
+2026-01-05 22:29:31,043 - rf_experiment - INFO - [epoch 3/5] training...
+2026-01-05 22:29:58,934 - rf_experiment - INFO - Epoch 3 [50/52] loss=0.7948[epoch 3] lr=0.000300
+2026-01-05 22:29:59,751 - rf_experiment - INFO - [epoch 3] train_loss=0.7415, train_acc=0.5629
+2026-01-05 22:30:00,727 - rf_experiment - INFO - [epoch 3] val_loss=0.7660, val_acc=0.5795
+2026-01-05 22:30:00,727 - rf_experiment - INFO - [epoch 4/5] training...
+2026-01-05 22:30:28,576 - rf_experiment - INFO - Epoch 4 [50/52] loss=0.6624[epoch 4] lr=0.000300
+2026-01-05 22:30:29,377 - rf_experiment - INFO - [epoch 4] train_loss=0.7608, train_acc=0.5650
+2026-01-05 22:30:30,265 - rf_experiment - INFO - [epoch 4] val_loss=0.6625, val_acc=0.6088
+2026-01-05 22:30:30,265 - rf_experiment - INFO - [epoch 5/5] training...
+2026-01-05 22:30:58,077 - rf_experiment - INFO - Epoch 5 [50/52] loss=0.5824[epoch 5] lr=0.000300
+2026-01-05 22:30:58,887 - rf_experiment - INFO - [epoch 5] train_loss=0.7237, train_acc=0.5858
+2026-01-05 22:30:59,857 - rf_experiment - INFO - [epoch 5] val_loss=0.6347, val_acc=0.6455
+2026-01-05 22:30:59,857 - rf_experiment - INFO - Evaluating on test set with best-val checkpoint...
+2026-01-05 22:31:01,044 - rf_experiment - INFO - Saved confusion matrix to results/project_runs_1_conv2d_.iqgrid_bptt_20260105_222831/confusion_matrix.png
+2026-01-05 22:31:01,044 - rf_experiment - INFO - Saved metrics to results/project_runs_1_conv2d_.iqgrid_bptt_20260105_222831/metrics.json
+2026-01-05 22:31:01,044 - rf_experiment - INFO - Finished experiment: project_runs_1_conv2d_.iqgrid_bptt
+2026-01-05 22:31:01,044 - rf_experiment - INFO - Best val metrics: {'loss': 0.6347393926897958, 'acc': 0.6454767726161369, 'per_snr_acc': {20: 0.7525773195876289, 0: 0.4742268041237113, 30: 0.7009345794392523, 10: 0.6481481481481481}, 'epoch': 5}
+2026-01-05 22:31:01,044 - rf_experiment - INFO - Test metrics: {'loss': 0.6466371544666244, 'acc': 0.6180048661800487, 'per_snr_acc': {30: 0.7222222222222222, 10: 0.494949494949495, 0: 0.5643564356435643, 20: 0.6796116504854369}}
+2026-01-05 22:31:01,045 - rf_experiment - INFO - Finished experiment: project_runs_1_conv2d_.iqgrid_bptt
+2026-01-05 22:31:01,045 - rf_experiment - INFO - Best val metrics: {'loss': 0.6347393926897958, 'acc': 0.6454767726161369, 'per_snr_acc': {20: 0.7525773195876289, 0: 0.4742268041237113, 30: 0.7009345794392523, 10: 0.6481481481481481}, 'epoch': 5}
+2026-01-05 22:31:01,045 - rf_experiment - INFO - Test metrics: {'loss': 0.6466371544666244, 'acc': 0.6180048661800487, 'per_snr_acc': {30: 0.7222222222222222, 10: 0.494949494949495, 0: 0.5643564356435643, 20: 0.6796116504854369}}

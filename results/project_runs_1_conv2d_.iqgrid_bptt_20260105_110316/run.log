@@ -1,0 +1,13 @@
+2026-01-05 11:03:16,172 - rf_experiment - INFO - Starting experiment: project_runs_1_conv2d_.iqgrid_bptt
+2026-01-05 11:03:16,172 - rf_experiment - INFO - Run name: project_runs_1_conv2d_.iqgrid_bptt_20260105_110316
+2026-01-05 11:03:16,172 - rf_experiment - INFO - Config file: configs/project_runs_1_conv2d_.iqgrid_bptt.yaml
+2026-01-05 11:03:16,172 - rf_experiment - INFO - Saved resolved config to: results/project_runs_1_conv2d_.iqgrid_bptt_20260105_110316/config.yaml
+2026-01-05 11:03:16,172 - rf_experiment - INFO - Run directory: results/project_runs_1_conv2d_.iqgrid_bptt_20260105_110316
+2026-01-05 11:03:16,183 - rf_experiment - INFO - Using device: mps
+2026-01-05 11:03:16,183 - rf_experiment - INFO - Using device: mps
+2026-01-05 11:03:16,183 - rf_experiment - INFO - Torch version: 2.9.0
+2026-01-05 11:03:16,183 - rf_experiment - INFO - Dataset config: {'path': 'data/GOLD_XYZ_OSC.0001_1024.hdf5', 'name': 'radioml2018_structured', 'frames_per_combo': 512, 'mods_to_use': [1, 2], 'snrs_to_use': [0, 10, 20, 30], 'train_frac': 0.8, 'val_frac': 0.1, 'test_frac': 0.1, 'shuffle': True, 'num_workers': 0}
+2026-01-05 11:03:16,183 - rf_experiment - INFO - Encoding config: {'type': 'iq_grid', 'params': {'grid_size': 16, 'subsample': 4}}
+2026-01-05 11:03:16,184 - rf_experiment - INFO - Total logical dataset size: 4096 samples
+2026-01-05 11:03:16,184 - rf_experiment - INFO - Num classes (from dataset): 2
+2026-01-05 11:03:16,184 - rf_experiment - INFO - Splits: train=3276, val=409, test=411

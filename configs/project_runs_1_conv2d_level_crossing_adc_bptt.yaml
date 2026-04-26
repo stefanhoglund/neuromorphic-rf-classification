@@ -1,0 +1,62 @@
+experiment:
+  name: project_runs_1_conv2d_level_crossing_adc_bptt
+  seed: 42
+  output_dir: results
+
+dataset:
+  path: data/GOLD_XYZ_OSC.0001_1024.hdf5
+  name: radioml2018_structured
+  frames_per_combo: 512            
+  mods_to_use: [0,1,2,3,4,5]       
+  snrs_to_use: [-20, -10, 0, 10, 20, 30]
+  train_frac: 0.8
+  val_frac: 0.1
+  test_frac: 0.1
+  shuffle: true
+  num_workers: 0
+
+encoding:
+  type: level_crossing_adc
+  params:
+    subsample: 4        
+    use_sign: true
+    n_levels: 8
+    grid_size: 16       
+
+
+model:
+  type: conv2d_snn
+  params:
+    input_channels: 1
+    conv_channels: [64, 128]
+    kernel_sizes: [3, 3]
+    grid_size: 16
+    lif_beta: 0.9
+    dropout: 0.0
+    pool: true
+
+training:
+  trainer: bptt
+  loss: cross_entropy
+  optimizer: adam
+  lr: 0.0003
+  lr_scheduler:
+    type: step
+    step_size: 5
+    gamma: 0.5
+  batch_size: 64
+  epochs: 50
+  max_time_steps: 256
+  grad_clip: 1.0
+  device: mps
+  early_stopping_patience: 5      
+  early_stopping_min_delta: 0.005 
+
+logging:
+  compute_per_snr: true
+  compute_spike_stats: true
+  compute_decision_latency: true
+  decision_threshold: 0.9
+
+hardware:
+  assumed_power_w: 150

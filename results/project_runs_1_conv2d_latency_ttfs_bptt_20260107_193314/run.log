@@ -1,0 +1,21 @@
+2026-01-07 19:33:14,030 - rf_experiment - INFO - Starting experiment: project_runs_1_conv2d_latency_ttfs_bptt
+2026-01-07 19:33:14,030 - rf_experiment - INFO - Run name: project_runs_1_conv2d_latency_ttfs_bptt_20260107_193314
+2026-01-07 19:33:14,030 - rf_experiment - INFO - Config file: configs/project_runs_1_conv2d_latency_ttfs_bptt.yaml
+2026-01-07 19:33:14,030 - rf_experiment - INFO - Saved resolved config to: results/project_runs_1_conv2d_latency_ttfs_bptt_20260107_193314/config.yaml
+2026-01-07 19:33:14,030 - rf_experiment - INFO - Run directory: results/project_runs_1_conv2d_latency_ttfs_bptt_20260107_193314
+2026-01-07 19:33:14,045 - rf_experiment - INFO - Using device: mps
+2026-01-07 19:33:14,045 - rf_experiment - INFO - Using device: mps
+2026-01-07 19:33:14,045 - rf_experiment - INFO - Torch version: 2.9.0
+2026-01-07 19:33:14,045 - rf_experiment - INFO - Dataset config: {'path': 'data/GOLD_XYZ_OSC.0001_1024.hdf5', 'name': 'radioml2018_structured', 'frames_per_combo': 512, 'mods_to_use': [0, 1, 2, 3, 4, 5], 'snrs_to_use': [-20, -10, 0, 10, 20, 30], 'train_frac': 0.8, 'val_frac': 0.1, 'test_frac': 0.1, 'shuffle': True, 'num_workers': 0}
+2026-01-07 19:33:14,045 - rf_experiment - INFO - Encoding config: {'type': 'latency_ttfs', 'params': {'subsample': 4, 'use_sign': True, 'pool': 'max'}}
+2026-01-07 19:33:14,046 - rf_experiment - INFO - Total logical dataset size: 18432 samples
+2026-01-07 19:33:14,046 - rf_experiment - INFO - Num classes (from dataset): 6
+2026-01-07 19:33:14,046 - rf_experiment - INFO - Splits: train=14745, val=1843, test=1844
+2026-01-07 19:33:14,046 - rf_experiment - INFO - Full dataset labels: {0: 3072, 1: 3072, 2: 3072, 3: 3072, 4: 3072, 5: 3072}
+2026-01-07 19:33:14,046 - rf_experiment - INFO - Full dataset SNRs: {-20: 3072, -10: 3072, 0: 3072, 10: 3072, 20: 3072, 30: 3072}
+2026-01-07 19:33:14,046 - rf_experiment - INFO - Dataloader: batch_size=64, num_workers=0
+2026-01-07 19:33:14,047 - rf_experiment - INFO - Building model: {'type': 'conv2d_snn', 'params': {'input_channels': 1, 'conv_channels': [64, 128], 'kernel_sizes': [3, 3], 'grid_size': 16, 'lif_beta': 0.9, 'dropout': 0.0, 'pool': True, 'num_classes': 6}}
+2026-01-07 19:33:14,047 - rf_experiment - INFO - Building model with num_classes=6
+2026-01-07 19:33:14,069 - rf_experiment - INFO - Building trainer: {'trainer': 'bptt', 'loss': 'cross_entropy', 'optimizer': 'adam', 'lr': 0.0003, 'lr_scheduler': {'type': 'step', 'step_size': 5, 'gamma': 0.5}, 'batch_size': 64, 'epochs': 50, 'max_time_steps': 256, 'grad_clip': 1.0, 'device': 'mps', 'early_stopping_patience': 5, 'early_stopping_min_delta': 0.005}
+2026-01-07 19:33:14,595 - rf_experiment - INFO - Starting training loop...
+2026-01-07 19:33:14,595 - rf_experiment - INFO - [epoch 1/50] training...

@@ -1,0 +1,33 @@
+2025-12-07 14:01:30,497 - rf_experiment - INFO - Starting experiment: radioml2018_small_hrm_bptt_1
+2025-12-07 14:01:30,497 - rf_experiment - INFO - Run name: radioml2018_small_hrm_bptt_1_20251207_140130
+2025-12-07 14:01:30,497 - rf_experiment - INFO - Config file: configs/radioml2018_small_hrm_bptt_1.yaml
+2025-12-07 14:01:30,497 - rf_experiment - INFO - Saved resolved config to: results/radioml2018_small_hrm_bptt_1_20251207_140130/config.yaml
+2025-12-07 14:01:30,497 - rf_experiment - INFO - Run directory: results/radioml2018_small_hrm_bptt_1_20251207_140130
+2025-12-07 14:01:30,497 - rf_experiment - INFO - Using device: cpu
+2025-12-07 14:01:30,497 - rf_experiment - INFO - Torch version: 2.9.0
+2025-12-07 14:01:30,497 - rf_experiment - INFO - Dataset config: {'path': 'data/GOLD_XYZ_OSC.0001_1024.hdf5', 'name': 'radioml2018_structured', 'frames_per_combo': 1024, 'mods_to_use': [1, 2, 3, 4, 5, 6], 'snrs_to_use': [30], 'train_frac': 0.8, 'val_frac': 0.1, 'test_frac': 0.1, 'shuffle': True, 'num_workers': 0}
+2025-12-07 14:01:30,497 - rf_experiment - INFO - Encoding config: {'type': 'iq_grid', 'params': {'grid_size': 16, 'subsample': 4}}
+2025-12-07 14:01:30,497 - rf_experiment - INFO - Total logical dataset size: 6144 samples
+2025-12-07 14:01:30,497 - rf_experiment - INFO - Num classes (from dataset): 6
+2025-12-07 14:01:30,497 - rf_experiment - INFO - Splits: train=4915, val=614, test=615
+2025-12-07 14:01:30,498 - rf_experiment - INFO - Dataloader: batch_size=64, num_workers=0
+2025-12-07 14:01:30,498 - rf_experiment - INFO - Building model: {'type': 'hrm_rf', 'params': {'input_channels': 1, 'grid_size': 16, 'low_dim': 256, 'high_dim': 256, 'num_cycles': 4, 'num_classes': 6, 'dropout': 0.1, 'agg': 'mean'}}
+2025-12-07 14:01:30,498 - rf_experiment - INFO - Building model with num_classes=6
+2025-12-07 14:01:30,500 - rf_experiment - INFO - Building trainer: {'trainer': 'bptt', 'loss': 'cross_entropy', 'optimizer': 'adam', 'lr': 0.001, 'batch_size': 64, 'epochs': 5, 'max_time_steps': 256, 'grad_clip': 1.0, 'device': 'cpu', 'lr_scheduler': {'type': 'cosine', 'step_size': 10, 'gamma': 0.1}}
+2025-12-07 14:01:30,801 - rf_experiment - INFO - Starting training loop...
+2025-12-07 14:01:30,801 - rf_experiment - INFO - [epoch 1/5] training...
+2025-12-07 14:02:18,549 - rf_experiment - INFO - [epoch 1] train_loss=1.3967, train_acc=0.2932
+2025-12-07 14:02:23,898 - rf_experiment - INFO - [epoch 1] val_loss=1.0493, val_acc=0.4772
+2025-12-07 14:02:23,898 - rf_experiment - INFO - [epoch 2/5] training...
+2025-12-07 14:03:13,451 - rf_experiment - INFO - [epoch 2] train_loss=1.0826, train_acc=0.4246
+2025-12-07 14:03:19,262 - rf_experiment - INFO - [epoch 2] val_loss=1.0392, val_acc=0.4153
+2025-12-07 14:03:19,262 - rf_experiment - INFO - [epoch 3/5] training...
+2025-12-07 14:04:11,275 - rf_experiment - INFO - [epoch 3] train_loss=0.8450, train_acc=0.4940
+2025-12-07 14:04:17,204 - rf_experiment - INFO - [epoch 3] val_loss=0.8691, val_acc=0.4886
+2025-12-07 14:04:17,205 - rf_experiment - INFO - [epoch 4/5] training...
+2025-12-07 14:05:06,810 - rf_experiment - INFO - [epoch 4] train_loss=0.8025, train_acc=0.5154
+2025-12-07 14:05:12,465 - rf_experiment - INFO - [epoch 4] val_loss=0.8089, val_acc=0.5033
+2025-12-07 14:05:12,465 - rf_experiment - INFO - [epoch 5/5] training...
+2025-12-07 14:05:59,820 - rf_experiment - INFO - [epoch 5] train_loss=0.7798, train_acc=0.5406
+2025-12-07 14:06:05,798 - rf_experiment - INFO - [epoch 5] val_loss=0.7996, val_acc=0.5228
+2025-12-07 14:06:05,798 - rf_experiment - INFO - Evaluating on test set...
